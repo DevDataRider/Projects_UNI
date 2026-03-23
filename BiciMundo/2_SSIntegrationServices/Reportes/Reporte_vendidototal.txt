@@ -1,0 +1,11 @@
+nombre_tienda,total_vendido
+Tienda Barranco,14220.70
+Tienda El Agustino,12454.20
+Tienda Carabayllo,5999.40
+Tienda Ancón,4243.90
+Tienda Chorrillos,2089.20
+Tienda Comas,1759.50
+Tienda Breña,1694.10
+Tienda Chaclacayo,1534.70
+Tienda Cieneguilla,1484.40
+Tienda Ate,1104.10

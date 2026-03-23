@@ -1,0 +1,101 @@
+nombre_tienda,nombre_producto,nombre_categoria,nombre_marca,nombre_modelo,stock
+Tienda Ancón,Bicicleta eléctrica urbana,Bicicletas,Monark,Urban Classic,12
+Tienda Ate,Bicicleta plegable compacta,Bicicletas,Monark,Urban Classic,12
+Tienda Barranco,Tornillos de titanio para bicicleta,Componentes,Kendall,Serie Deore XT,12
+Tienda Breña,Porta celulares para bicicleta,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda Carabayllo,Polo de ciclismo manga larga,Vestimenta,Kendall,Serie Reflectante UltraSafe,12
+Tienda Chaclacayo,Chaleco cortavientos reflectante,Vestimenta,Kendall,Serie Reflectante UltraSafe,12
+Tienda Chorrillos,Guantes de ciclismo antideslizantes,Herramientas,Kendall,Serie Accesorios Mini Pro,12
+Tienda Cieneguilla,Tomatodo isotérmico 750ml,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda Comas,Desarmador multifunción Pro,Componentes,Giant,Serie Herramientas 15 en 1,12
+Tienda El Agustino,Asiento ergonómico premium,Componentes,Kendall,Serie Deore XT,12
+Tienda Independencia,Pedales de aluminio reforzados,Componentes,Trek,Serie Deore XT,12
+Tienda Jesús María,Cadena de acero templado,Componentes,Trek,Serie Deore XT,12
+Tienda La Molina,Llanta de alta resistencia,Componentes,Kendall,MTB Kendall Pro,12
+Tienda La Victoria,Kit de luces LED ultra brillantes,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda Lince,Casco aerodinámico profesional,Accesorios,Trek,Serie Casco AirBreaker,12
+Tienda Los Olivos,Bombín de alta presión portátil,Accesorios,Giant,Serie Accesorios Mini Pro,12
+Tienda Lurigancho,Multiherramienta de ciclismo 22 en 1,Herramientas,Giant,Serie Herramientas 15 en 1,12
+Tienda Lurín,Porta-caramañola de aluminio,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda Magdalena del Mar,Computadora de ciclismo GPS,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda Miraflores,Ropa interior acolchada para ciclista,Vestimenta,Kendall,Serie Reflectante UltraSafe,12
+Tienda Pueblo Libre,Rodillera de protección para ciclismo,Vestimenta,Kendall,Serie Reflectante UltraSafe,12
+Tienda Puente Piedra,Gafas polarizadas de ciclismo,Vestimenta,Kendall,Serie Accesorios Mini Pro,12
+Tienda San Bartolo,Freno de disco hidráulico profesional,Componentes,Kendall,Serie Deore XT,12
+Tienda San Borja,Lubricante premium para cadena,Squirt Cycling,Trek,Serie Lubricantes Squirt,12
+Tienda San Isidro,Cubierta antipinchazos reforzada,Componentes,Kendall,MTB Kendall Pro,12
+Tienda San Juan de Lurigancho,Guardabarros de ciclismo,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda San Juan de Miraflores,Alforjas impermeables,Componentes,Trek,Serie Accesorios Mini Pro,12
+Tienda San Luis,Mochila de hidratación 2L,Accesorios,Kendall,Serie Accesorios Mini Pro,12
+Tienda San Martín de Porres,Pastillas de freno semi-metálicas,Componentes,Kendall,Serie Deore XT,12
+Tienda San Miguel,Tija de sillín telescópica,Componentes,Kendall,Serie Deore XT,12
+Tienda Ancón,Portabicicletas de techo para auto,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda Ate,Cinta de manillar de microfibra,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda Barranco,Calzas térmicas de ciclismo,Componentes,Kendall,Serie Reflectante UltraSafe,12
+Tienda Breña,Medias de ciclismo transpirables,Vestimenta,Kendall,Serie Reflectante UltraSafe,12
+Tienda Carabayllo,Casco infantil de ciclismo,Accesorios,Trek,Serie Casco AirBreaker,12
+Tienda Chaclacayo,Polo de ciclismo manga corta,Vestimenta,Kendall,Serie Reflectante UltraSafe,12
+Tienda Chorrillos,Guantes de invierno para ciclismo,Vestimenta,Kendall,Serie Accesorios Mini Pro,12
+Tienda Cieneguilla,Luz trasera LED potente,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda Comas,Herramienta corta cadenas,Herramientas,Giant,Serie Herramientas 15 en 1,12
+Tienda El Agustino,Extractor de bielas profesional,Herramientas,Giant,Serie Herramientas 15 en 1,12
+Tienda Independencia,Pedales automáticos MTB,Componentes,Kendall,Serie Deore XT,12
+Tienda Jesús María,Cadena de 11 velocidades,Componentes,Kendall,Serie Deore XT,12
+Tienda La Molina,Llanta de gravel reforzada,Componentes,Kendall,MTB Kendall Pro,12
+Tienda La Victoria,Lubricante seco para cadena,Squirt Cycling,Trek,Serie Lubricantes Squirt,12
+Tienda Lince,Soporte de mantenimiento plegable,Herramientas,Giant,Serie Herramientas 15 en 1,12
+Tienda Los Olivos,Bicicleta eléctrica urbana,Bicicletas,Monark,Urban Classic,12
+Tienda Lurigancho,Polo de ciclismo de verano,Vestimenta,Kendall,Serie Accesorios Mini Pro,12
+Tienda Lurín,Botella térmica profesional,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda Magdalena del Mar,Bicicleta de paseo vintage,Bicicletas,Monark,Urban Classic,12
+Tienda Miraflores,Polo técnico manga larga,Vestimenta,Kendall,Serie Accesorios Mini Pro,12
+Tienda Pueblo Libre,Guantes impermeables,Vestimenta,Kendall,Serie Accesorios Mini Pro,12
+Tienda Puente Piedra,Bombín de pie reforzado,Herramientas,Giant,Serie Herramientas 15 en 1,12
+Tienda San Bartolo,Gafas polarizadas para ciclismo,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda San Borja,Freno de disco mecánico,Componentes,Kendall,Serie Deore XT,12
+Tienda San Isidro,Cera lubricante para cadena,Squirt Cycling,Specialized,Serie Lubricantes Squirt,12
+Tienda San Juan de Lurigancho,Luz trasera de alta intensidad,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda San Juan de Miraflores,Rodillera profesional acolchada,Vestimenta,Kendall,Serie Reflectante UltraSafe,12
+Tienda San Luis,Cadena antirrobo reforzada,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda San Martín de Porres,Tija telescópica hidráulica,Componentes,Kendall,Serie Deore XT,12
+Tienda San Miguel,Set de parches autoadhesivos,Herramientas,Kendall,Serie Accesorios Mini Pro,12
+Tienda Ancón,Guantes acolchados anti-impacto,Vestimenta,Kendall,Serie Accesorios Mini Pro,12
+Tienda Ate,Luz frontal con sensor,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda Barranco,Casco MTB con visera,Accesorios,Trek,Serie Casco AirBreaker,12
+Tienda Breña,Chaleco impermeable reflectante,Vestimenta,Kendall,Serie Reflectante UltraSafe,12
+Tienda Carabayllo,Freno hidráulico de 4 pistones,Componentes,Kendall,Serie Deore XT,12
+Tienda Chaclacayo,Bicicleta,Bicicletas,Monark,Rockhopper,12
+Tienda Chorrillos,Polo,Vestimenta,Trek,Serie Accesorios Mini Pro,12
+Tienda Cieneguilla,Tomatodo,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda Comas,Bicicleta de montaña,Bicicletas,Monark,Rockhopper,12
+Tienda El Agustino,Bicicleta de ruta,Bicicletas,Monark,Marlin 5,12
+Tienda Independencia,Polo deportivo,Vestimenta,Trek,Serie Accesorios Mini Pro,12
+Tienda Jesús María,Casaca cortavientos,Vestimenta,Trek,Serie Accesorios Mini Pro,12
+Tienda La Molina,Guantes de ciclismo,Accesorios,Kendall,Serie Accesorios Mini Pro,12
+Tienda La Victoria,Tomatodo térmico,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda Lince,Desarmador especial para bicicletas,Herramientas,Specialized,Serie Herramientas 15 en 1,12
+Tienda Los Olivos,Asiento ergonómico,Componentes,Kendall,Urban Classic,12
+Tienda Lurigancho,Pedales antideslizantes,Componentes,Kendall,Urban Classic,12
+Tienda Lurín,Cadena reforzada,Componentes,Kendall,Serie Deore XT,12
+Tienda Magdalena del Mar,Llantas de repuesto,Componentes,Kendall,MTB Kendall Pro,12
+Tienda Miraflores,Kit de luces LED,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda Pueblo Libre,Casco de ciclismo,Vestimenta,Trek,Serie Casco AirBreaker,12
+Tienda Puente Piedra,Bombín portátil,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda San Bartolo,Multiherramienta para bicicleta,Herramientas,Specialized,Serie Herramientas 15 en 1,12
+Tienda San Borja,Porta-caramañola,Componentes,Trek,Serie Accesorios Mini Pro,12
+Tienda San Isidro,Computadora de bicicleta (odómetro),Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda San Juan de Lurigancho,Ropa interior acolchada,Vestimenta,Trek,Serie Accesorios Mini Pro,12
+Tienda San Juan de Miraflores,Rodillera de protección,Vestimenta,Trek,Serie Accesorios Mini Pro,12
+Tienda San Luis,Gafas de ciclismo,Vestimenta,Trek,Serie Accesorios Mini Pro,12
+Tienda San Martín de Porres,Freno de disco hidráulico,Componentes,Kendall,Serie Deore XT,12
+Tienda San Miguel,Lubricante para cadena,Squirt Cycling,Trek,Serie Lubricantes Squirt,12
+Tienda Ancón,Cubierta antipinchazos,Componentes,Kendall,MTB Kendall Pro,12
+Tienda Ate,Guardabarros desmontable,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda Barranco,Alforjas para bicicleta,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda Breña,Mochila de hidratación,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda Carabayllo,Pastillas de freno,Componentes,Kendall,Serie Deore XT,12
+Tienda Chaclacayo,Tija de sillín ajustable,Componentes,Kendall,Serie Deore XT,12
+Tienda Chorrillos,Porta-bicicletas para auto,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda Cieneguilla,Cinta de manillar,Accesorios,Trek,Serie Accesorios Mini Pro,12
+Tienda Comas,Bicicleta eléctrica Gayeric,Bicicletas,Kendall,Urban Classic,12
+Tienda El Agustino,Bicicleta Montañera,Bicicletas,Monark,Urban Classic,12

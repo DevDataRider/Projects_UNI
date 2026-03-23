@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\ProyectosBI\\Cubo Datamart BiciMundo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{11B42CBD-AB65-E718-DD95-3A16800E9B75}|Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo.dwproj|C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Cubo BiciMundo Data Mart.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{11B42CBD-AB65-E718-DD95-3A16800E9B75}|Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo.dwproj|solutionrelative:Cubo Datamart BiciMundo\\Cubo BiciMundo Data Mart.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11B42CBD-AB65-E718-DD95-3A16800E9B75}|Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo.dwproj|C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Dim Fecha.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{11B42CBD-AB65-E718-DD95-3A16800E9B75}|Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo.dwproj|solutionrelative:Cubo Datamart BiciMundo\\Dim Fecha.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11B42CBD-AB65-E718-DD95-3A16800E9B75}|Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo.dwproj|C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Dim Orden.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{11B42CBD-AB65-E718-DD95-3A16800E9B75}|Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo.dwproj|solutionrelative:Cubo Datamart BiciMundo\\Dim Orden.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11B42CBD-AB65-E718-DD95-3A16800E9B75}|Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo.dwproj|C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Dim Productos.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{11B42CBD-AB65-E718-DD95-3A16800E9B75}|Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo.dwproj|solutionrelative:Cubo Datamart BiciMundo\\Dim Productos.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11B42CBD-AB65-E718-DD95-3A16800E9B75}|Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo.dwproj|C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Dim Vendedores.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{11B42CBD-AB65-E718-DD95-3A16800E9B75}|Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo.dwproj|solutionrelative:Cubo Datamart BiciMundo\\Dim Vendedores.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11B42CBD-AB65-E718-DD95-3A16800E9B75}|Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo.dwproj|C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Dim Clientes.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{11B42CBD-AB65-E718-DD95-3A16800E9B75}|Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo.dwproj|solutionrelative:Cubo Datamart BiciMundo\\Dim Clientes.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11B42CBD-AB65-E718-DD95-3A16800E9B75}|Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo.dwproj|C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Vista BiciMundo Data Mart.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{11B42CBD-AB65-E718-DD95-3A16800E9B75}|Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo.dwproj|solutionrelative:Cubo Datamart BiciMundo\\Vista BiciMundo Data Mart.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Cubo BiciMundo Data Mart.cube [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Cubo BiciMundo Data Mart.cube",
+              "RelativeDocumentMoniker": "Cubo Datamart BiciMundo\\Cubo BiciMundo Data Mart.cube",
+              "ToolTip": "C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Cubo BiciMundo Data Mart.cube [Dise\u00F1o]",
+              "RelativeToolTip": "Cubo Datamart BiciMundo\\Cubo BiciMundo Data Mart.cube [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-27T22:34:20.138Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dim Fecha.dim [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Dim Fecha.dim",
+              "RelativeDocumentMoniker": "Cubo Datamart BiciMundo\\Dim Fecha.dim",
+              "ToolTip": "C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Dim Fecha.dim [Dise\u00F1o]",
+              "RelativeToolTip": "Cubo Datamart BiciMundo\\Dim Fecha.dim [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-27T22:22:38.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dim Orden.dim [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Dim Orden.dim",
+              "RelativeDocumentMoniker": "Cubo Datamart BiciMundo\\Dim Orden.dim",
+              "ToolTip": "C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Dim Orden.dim [Dise\u00F1o]",
+              "RelativeToolTip": "Cubo Datamart BiciMundo\\Dim Orden.dim [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-27T21:22:01.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dim Productos.dim [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Dim Productos.dim",
+              "RelativeDocumentMoniker": "Cubo Datamart BiciMundo\\Dim Productos.dim",
+              "ToolTip": "C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Dim Productos.dim [Dise\u00F1o]",
+              "RelativeToolTip": "Cubo Datamart BiciMundo\\Dim Productos.dim [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-27T21:20:38.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dim Vendedores.dim [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Dim Vendedores.dim",
+              "RelativeDocumentMoniker": "Cubo Datamart BiciMundo\\Dim Vendedores.dim",
+              "ToolTip": "C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Dim Vendedores.dim [Dise\u00F1o]",
+              "RelativeToolTip": "Cubo Datamart BiciMundo\\Dim Vendedores.dim [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-27T21:19:22.856Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Dim Clientes.dim [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Dim Clientes.dim",
+              "RelativeDocumentMoniker": "Cubo Datamart BiciMundo\\Dim Clientes.dim",
+              "ToolTip": "C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Dim Clientes.dim [Dise\u00F1o]",
+              "RelativeToolTip": "Cubo Datamart BiciMundo\\Dim Clientes.dim [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-27T21:18:26.426Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Vista BiciMundo Data Mart.dsv [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Vista BiciMundo Data Mart.dsv",
+              "RelativeDocumentMoniker": "Cubo Datamart BiciMundo\\Vista BiciMundo Data Mart.dsv",
+              "ToolTip": "C:\\ProyectosBI\\Cubo Datamart BiciMundo\\Cubo Datamart BiciMundo\\Vista BiciMundo Data Mart.dsv [Dise\u00F1o]",
+              "RelativeToolTip": "Cubo Datamart BiciMundo\\Vista BiciMundo Data Mart.dsv [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-27T21:17:05.067Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

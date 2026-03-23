@@ -1,0 +1,192 @@
+/* Estilos para panel limpio */
+.contenedor-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card-panel {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-panel:hover {
+  transform: translateY(-4px);
+}
+
+.card-panel h2 {
+  font-size: 2rem;
+  color: #222;
+  margin: 0;
+}
+
+.card-panel p {
+  color: #555;
+  margin: 10px 0;
+}
+
+.card-panel a.btn-link {
+  align-self: flex-start;
+  padding: 0;
+  margin-top: auto;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card-panel a.btn-link:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+/* ----- Sidebar claro, limpio y con separación ----- */
+
+.main-sidebar {
+  background-color: #f9f9f9; /* fondo claro */
+  min-height: 100vh;
+  border-right: 1px solid #e0e0e0;
+  padding-top: 20px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu li {
+  border-bottom: 1px solid #e4e4e4; /* separador entre elementos */
+}
+
+.sidebar-menu li a {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  gap: 10px;
+}
+
+.sidebar-menu li a:hover {
+  background-color: #eeeeee;
+  color: #000;
+}
+
+.sidebar-menu li.active > a {
+  background-color: #dceaff;
+  color: #0056b3;
+  font-weight: 600;
+}
+
+.sidebar-menu i.fa {
+  font-size: 18px;
+  color: #666;
+  min-width: 20px;
+}
+.sidebar-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #666;
+  padding: 10px 20px 5px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Forzar fondo claro del asasassidebar */
+.main-sidebar,
+.main-sidebar .sidebar {
+  background-color: #f9f9f9 !important;
+}
+
+
+/* Estilo del texto del menú lateral */
+
+.sidebar-menu li a {
+  color: #333; /* gris oscuro, legible y moderno */
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.sidebar-menu li a:hover {
+  color: #000; /* negro en hover */
+}
+
+.sidebar-menu li.active > a {
+  color: #1a53ff; /* azul suave para ítem activo */
+  background-color: #e3edff; /* azul claro de fondo */
+  font-weight: 600;
+}
+/* Fondo claro para el sidebar */
+.main-sidebar,
+.main-sidebar .sidebar {
+  background-color: #f9f9f9 !important;
+}
+
+/* Texto e íconos del menú lateral */
+.sidebar-menu li a {
+  color: #1e3fa4 !important;
+  font-weight: 600;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Íconos (FontAwesome) */
+.sidebar-menu li a i.fa {
+  color: #1e3fa4 !important;
+}
+
+/* Hover */
+.sidebar-menu li a:hover {
+  background-color: #eaefff;
+  color: #1e3fa4 !important;
+}
+
+/* Opción activa */
+.sidebar-menu li.active > a {
+  background-color: #d6e4ff;
+  color: #1e3fa4 !important;
+}
+.sidebar-menu li a {
+  font-size: 15px;
+  letter-spacing: 0.4px;
+  font-weight: 500;
+  color: #1e3fa4 !important;
+}
+
+.sidebar-menu li a i.fa {
+  font-size: 18px;
+  color: #1e3fa4 !important;
+}
+/* Hover: fondo azul y texto blanco */
+.sidebar-menu li a:hover {
+  background-color: #1e3fa4 !important;
+  color: #ffffff !important;
+}
+
+.sidebar-menu li a:hover i.fa {
+  color: #ffffff !important;
+}
+
+
+.sidebar-menu li {
+  margin-top: 0.2rem; /* Opcional: reducir separación entre ítems */
+}

@@ -1,0 +1,615 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/27/2025 1:38:57 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-GB07G61"
+  DTS:CreatorName="DESKTOP-GB07G61\christian pc"
+  DTS:DTSID="{B3E3412D-33C9-457B-AC32-2987E55DD583}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="10250"
+  DTS:ObjectName="Tarea Flujo de Datos"
+  DTS:PackageType="5"
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{BE22D8DC-8C7C-44B9-BE6F-8955477AED20}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{81D8F3B5-1236-427A-A4F6-7665FF63B233}"
+      DTS:ObjectName="Administrador de conexiones con Excel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\ProyectosBI\Reportes_excel\Reporte Inventario_Tienda.xls;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-GB07G61.BiciMundo]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B5B8E2C9-1FEF-41D2-9F51-E22FB0E9AA7C}"
+      DTS:ObjectName="DESKTOP-GB07G61.BiciMundo">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-GB07G61;Initial Catalog=BiciMundo;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{B5B8E2C9-1FEF-41D2-9F51-E22FB0E9AA7C}DESKTOP-GB07G61.BiciMundo;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Reporte Inventario_Tienda]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D6FC2BC9-CA44-46B4-8862-0BD40A49D21E}"
+      DTS:ObjectName="Reporte Inventario_Tienda">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::Ruta]+ @[User::NombreArchivo]+ @[User::FechaSistema]+".txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="10250"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\ProyectosBI\Reportes\Reporte Inventario_Tienda2025-05-27.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="300"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nombre_tienda"
+              DTS:DTSID="{BC862AED-B225-454F-BE21-A969006A1456}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nombre_producto"
+              DTS:DTSID="{61F4544A-D8E9-4A92-8BBD-E26AEFE16CAB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nombre_categoria"
+              DTS:DTSID="{81B0A895-500E-487A-A22C-0D5A5CC2FD18}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nombre_marca"
+              DTS:DTSID="{56362F9B-3D8A-4488-83E9-C8E8A4EA0EBE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nombre_modelo"
+              DTS:DTSID="{BA9EBFC8-A698-4F30-BB52-CEBE60A20ECD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="stock"
+              DTS:DTSID="{F3121C6E-2396-4A6A-82A2-EE107CEF052A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B4A61910-9441-47DE-AE3D-64AC9F1F2F7D}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="SUBSTRING((DT_WSTR, 29)GETDATE(), 1, 10 )"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FechaSistema">
+      <DTS:VariableValue
+        DTS:DataType="8">2025-05-27</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CF9FF1CD-4418-4A63-A67A-2010C8C302D3}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="NombreArchivo">
+      <DTS:VariableValue
+        DTS:DataType="8">Reporte Inventario_Tienda</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F319B98A-9B6B-4F1C-841C-12089B4D69DD}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Ruta">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\ProyectosBI\Reportes\</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\TAREA FLUJO DE DATOS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D59A3F5C-AD76-43B9-803C-9B44E2C0A6A1}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TAREA FLUJO DE DATOS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="10250"
+              name="EXPORTAR DATOS"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Reporte Inventario_Tienda]"
+                  connectionManagerRefId="Package.ConnectionManagers[Reporte Inventario_Tienda]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input].Columns[nombre_tienda]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="nombre_tienda"
+                      externalMetadataColumnId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input].ExternalColumns[nombre_tienda]"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].Columns[nombre_tienda]" />
+                    <inputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input].Columns[nombre_producto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="nombre_producto"
+                      externalMetadataColumnId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input].ExternalColumns[nombre_producto]"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].Columns[nombre_producto]" />
+                    <inputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input].Columns[nombre_categoria]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="nombre_categoria"
+                      externalMetadataColumnId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input].ExternalColumns[nombre_categoria]"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].Columns[nombre_categoria]" />
+                    <inputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input].Columns[nombre_marca]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="nombre_marca"
+                      externalMetadataColumnId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input].ExternalColumns[nombre_marca]"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].Columns[nombre_marca]" />
+                    <inputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input].Columns[nombre_modelo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="nombre_modelo"
+                      externalMetadataColumnId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input].ExternalColumns[nombre_modelo]"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].Columns[nombre_modelo]" />
+                    <inputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input].Columns[stock]"
+                      cachedDataType="i4"
+                      cachedName="stock"
+                      externalMetadataColumnId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input].ExternalColumns[stock]"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].Columns[stock]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input].ExternalColumns[nombre_tienda]"
+                      codePage="1252"
+                      dataType="str"
+                      length="300"
+                      name="nombre_tienda" />
+                    <externalMetadataColumn
+                      refId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input].ExternalColumns[nombre_producto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="nombre_producto" />
+                    <externalMetadataColumn
+                      refId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input].ExternalColumns[nombre_categoria]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="nombre_categoria" />
+                    <externalMetadataColumn
+                      refId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input].ExternalColumns[nombre_marca]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="nombre_marca" />
+                    <externalMetadataColumn
+                      refId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input].ExternalColumns[nombre_modelo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="nombre_modelo" />
+                    <externalMetadataColumn
+                      refId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input].ExternalColumns[stock]"
+                      dataType="i4"
+                      name="stock" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="TABLA INVENTARIO JOIN PRODUCTO"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Inventario_Tienda]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    t.nombre_tienda,
+    p.nombre AS nombre_producto,
+    c.nombre_categoria,
+    m.nombre_marca,
+    mo.nombre_modelo,
+    i.stock
+FROM 
+    Inventario i
+INNER JOIN 
+    Tienda t ON i.id_tienda = t.id_tienda
+INNER JOIN 
+    Producto p ON i.id_producto = p.id_producto
+INNER JOIN 
+    Categoria c ON p.id_categoria = c.id_categoria
+INNER JOIN 
+    Marca m ON p.id_marca = m.id_marca
+INNER JOIN 
+    Modelo mo ON p.id_modelo = mo.id_modelo;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-GB07G61.BiciMundo]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GB07G61.BiciMundo]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].Columns[nombre_tienda]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].ExternalColumns[nombre_tienda]"
+                      length="100"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].Columns[nombre_tienda]"
+                      name="nombre_tienda"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].Columns[nombre_producto]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].ExternalColumns[nombre_producto]"
+                      length="100"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].Columns[nombre_producto]"
+                      name="nombre_producto"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].Columns[nombre_categoria]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].ExternalColumns[nombre_categoria]"
+                      length="100"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].Columns[nombre_categoria]"
+                      name="nombre_categoria"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].Columns[nombre_marca]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].ExternalColumns[nombre_marca]"
+                      length="100"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].Columns[nombre_marca]"
+                      name="nombre_marca"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].Columns[nombre_modelo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].ExternalColumns[nombre_modelo]"
+                      length="100"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].Columns[nombre_modelo]"
+                      name="nombre_modelo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].Columns[stock]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].ExternalColumns[stock]"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].Columns[stock]"
+                      name="stock"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].ExternalColumns[nombre_tienda]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="nombre_tienda" />
+                    <externalMetadataColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].ExternalColumns[nombre_producto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="nombre_producto" />
+                    <externalMetadataColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].ExternalColumns[nombre_categoria]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="nombre_categoria" />
+                    <externalMetadataColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].ExternalColumns[nombre_marca]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="nombre_marca" />
+                    <externalMetadataColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].ExternalColumns[nombre_modelo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="nombre_modelo" />
+                    <externalMetadataColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output].ExternalColumns[stock]"
+                      dataType="i4"
+                      name="stock" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Error Output].Columns[nombre_tienda]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Error Output].Columns[nombre_tienda]"
+                      name="nombre_tienda" />
+                    <outputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Error Output].Columns[nombre_producto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Error Output].Columns[nombre_producto]"
+                      name="nombre_producto" />
+                    <outputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Error Output].Columns[nombre_categoria]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Error Output].Columns[nombre_categoria]"
+                      name="nombre_categoria" />
+                    <outputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Error Output].Columns[nombre_marca]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Error Output].Columns[nombre_marca]"
+                      name="nombre_marca" />
+                    <outputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Error Output].Columns[nombre_modelo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Error Output].Columns[nombre_modelo]"
+                      name="nombre_modelo" />
+                    <outputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Error Output].Columns[stock]"
+                      dataType="i4"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Error Output].Columns[stock]"
+                      name="stock" />
+                    <outputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\TAREA FLUJO DE DATOS.Paths[OLE DB Source Output]"
+              endId="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="197,42"
+          Id="Package\TAREA FLUJO DE DATOS"
+          TopLeft="334,73" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\TAREA FLUJO DE DATOS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="259,42"
+          Id="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO"
+          TopLeft="296,50" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\TAREA FLUJO DE DATOS\EXPORTAR DATOS"
+          TopLeft="336,168" />
+        <EdgeLayout
+          Id="Package\TAREA FLUJO DE DATOS.Paths[OLE DB Source Output]"
+          TopLeft="422.5,92">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76"
+              Start="0,0"
+              End="0,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\TAREA FLUJO DE DATOS\TABLA INVENTARIO JOIN PRODUCTO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

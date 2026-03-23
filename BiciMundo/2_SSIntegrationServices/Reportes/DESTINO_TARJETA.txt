@@ -1,0 +1,1 @@
+id_venta,cantidad,precio_unitario,total_detalle,id_medio_pago,descripcion

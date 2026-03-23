@@ -1,0 +1,1249 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/29/2025 1:17:01 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-GB07G61"
+  DTS:CreatorName="DESKTOP-GB07G61\christian pc"
+  DTS:DTSID="{3962364F-BA50-4C0C-AAD5-4AA5E1A7F587}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="10250"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{E70BC3F6-0E81-4256-A1A8-B613D57076A3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{916D7A16-8417-45B0-96B3-D8188A747997}"
+      DTS:ObjectName="Administrador de conexiones con Excel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\ProyectosBI\Reportes\reporte_excel.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-GB07G61.BiciMundo]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A5204038-5169-4087-B5DF-A61B1FE61C42}"
+      DTS:ObjectName="DESKTOP-GB07G61.BiciMundo">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-GB07G61;Initial Catalog=BiciMundo;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{A5204038-5169-4087-B5DF-A61B1FE61C42}DESKTOP-GB07G61.BiciMundo;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{2E564659-519B-49AE-A0E6-E33EDA18E2E9}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="10250"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\ProyectosBI\Reportes\asasasasa.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nombre_categoria"
+              DTS:DTSID="{CF8851CD-1B4E-4C7D-9539-9266206ED992}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="21"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="subtotal"
+              DTS:DTSID="{DC0C4557-45B7-4291-9A1D-318A9543F0A9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cantidad"
+              DTS:DTSID="{10D011F1-8700-4650-BFB8-C495831E5D84}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{133DB215-C21E-40A8-9BEC-907F21730634}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="PRODUCTOS_VENDIDOS_POR_CATEGORIA">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\AGREGAR"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="AGREGAR"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\AGREGAR.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\AGREGAR.Inputs[Aggregate Input 1].Columns[nombre_categoria]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="nombre_categoria"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA.Outputs[Lookup Match Output].Columns[nombre_categoria]" />
+                    <inputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\AGREGAR.Inputs[Aggregate Input 1].Columns[subtotal]"
+                      cachedDataType="numeric"
+                      cachedName="subtotal"
+                      cachedPrecision="21"
+                      cachedScale="2"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].Columns[subtotal]" />
+                    <inputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\AGREGAR.Inputs[Aggregate Input 1].Columns[cantidad]"
+                      cachedDataType="i4"
+                      cachedName="cantidad"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].Columns[cantidad]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\AGREGAR.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\AGREGAR.Outputs[Aggregate Output 1].Columns[nombre_categoria]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\AGREGAR.Outputs[Aggregate Output 1].Columns[nombre_categoria]"
+                      name="nombre_categoria">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA.Outputs[Lookup Match Output].Columns[nombre_categoria]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\AGREGAR.Outputs[Aggregate Output 1].Columns[subtotal]"
+                      dataType="numeric"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\AGREGAR.Outputs[Aggregate Output 1].Columns[subtotal]"
+                      name="subtotal"
+                      precision="21"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].Columns[subtotal]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\AGREGAR.Outputs[Aggregate Output 1].Columns[cantidad]"
+                      dataType="i8"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\AGREGAR.Outputs[Aggregate Output 1].Columns[cantidad]"
+                      name="cantidad">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].Columns[cantidad]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="CATEGORIA"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Categoria]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Categoria]) [refTable]
+where [refTable].[id_categoria] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id_categoria" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="nombre_categoria" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO.Outputs[Lookup Match Output].Columns[id_categoria]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-GB07G61.BiciMundo]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GB07G61.BiciMundo]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA.Inputs[Lookup Input].Columns[id_categoria]"
+                      cachedDataType="i4"
+                      cachedName="id_categoria"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO.Outputs[Lookup Match Output].Columns[id_categoria]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">id_categoria</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA.Outputs[Lookup Match Output].Columns[nombre_categoria]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="100"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA.Outputs[Lookup Match Output].Columns[nombre_categoria]"
+                      name="nombre_categoria"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">nombre_categoria</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Data Conversion.Inputs[Data Conversion Input].Columns[nombre_categoria]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="nombre_categoria"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\AGREGAR.Outputs[Aggregate Output 1].Columns[nombre_categoria]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Data Conversion.Outputs[Data Conversion Output].Columns[NOMBRE_categoria_]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Data Conversion.Outputs[Data Conversion Output].Columns[NOMBRE_categoria_]"
+                      name="NOMBRE_categoria_"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\AGREGAR.Outputs[Aggregate Output 1].Columns[nombre_categoria]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DETALLE_VENTA"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Detalle_Venta]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT id_producto, cantidad, precio_unitario, (cantidad * precio_unitario) AS subtotal
+FROM Detalle_Venta</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-GB07G61.BiciMundo]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GB07G61.BiciMundo]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].Columns[id_producto]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].ExternalColumns[id_producto]"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].Columns[id_producto]"
+                      name="id_producto"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].Columns[cantidad]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].ExternalColumns[cantidad]"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].Columns[cantidad]"
+                      name="cantidad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].Columns[precio_unitario]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].ExternalColumns[precio_unitario]"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].Columns[precio_unitario]"
+                      name="precio_unitario"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].Columns[subtotal]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].ExternalColumns[subtotal]"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].Columns[subtotal]"
+                      name="subtotal"
+                      precision="21"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].ExternalColumns[id_producto]"
+                      dataType="i4"
+                      name="id_producto" />
+                    <externalMetadataColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].ExternalColumns[cantidad]"
+                      dataType="i4"
+                      name="cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].ExternalColumns[precio_unitario]"
+                      dataType="numeric"
+                      name="precio_unitario"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].ExternalColumns[subtotal]"
+                      dataType="numeric"
+                      name="subtotal"
+                      precision="21"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Error Output].Columns[id_producto]"
+                      dataType="i4"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Error Output].Columns[id_producto]"
+                      name="id_producto" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Error Output].Columns[cantidad]"
+                      dataType="i4"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Error Output].Columns[cantidad]"
+                      name="cantidad" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Error Output].Columns[precio_unitario]"
+                      dataType="numeric"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Error Output].Columns[precio_unitario]"
+                      name="precio_unitario"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Error Output].Columns[subtotal]"
+                      dataType="numeric"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Error Output].Columns[subtotal]"
+                      name="subtotal"
+                      precision="21"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination"
+              componentClassID="Microsoft.ExcelDestination"
+              contactInfo="Excel Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Excel Destination"
+              name="Excel Destination"
+              usesDispositions="true">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">reporte_excel$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination.Inputs[Excel Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Excel Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination.Inputs[Excel Destination Input].Columns[subtotal]"
+                      cachedDataType="numeric"
+                      cachedName="subtotal"
+                      cachedPrecision="21"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[subtotal]"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\AGREGAR.Outputs[Aggregate Output 1].Columns[subtotal]" />
+                    <inputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination.Inputs[Excel Destination Input].Columns[cantidad]"
+                      cachedDataType="i8"
+                      cachedName="cantidad"
+                      externalMetadataColumnId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[cantidad]"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\AGREGAR.Outputs[Aggregate Output 1].Columns[cantidad]" />
+                    <inputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination.Inputs[Excel Destination Input].Columns[NOMBRE_categoria_]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="NOMBRE_categoria_"
+                      externalMetadataColumnId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[nombre_categoria]"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Data Conversion.Outputs[Data Conversion Output].Columns[NOMBRE_categoria_]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[nombre_categoria]"
+                      dataType="wstr"
+                      length="255"
+                      name="nombre_categoria" />
+                    <externalMetadataColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[subtotal]"
+                      dataType="wstr"
+                      length="255"
+                      name="subtotal" />
+                    <externalMetadataColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[cantidad]"
+                      dataType="wstr"
+                      length="255"
+                      name="cantidad" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination.Outputs[Excel Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Excel Destination Error Output"
+                  synchronousInputId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination.Inputs[Excel Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="PRODUCTO"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Producto]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Producto]) [refTable]
+where [refTable].[id_producto] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id_producto" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="nombre" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="descripcion" dataType="DT_TEXT" length="0" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="precio_actual" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;referenceColumn name="garantia_meses" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="id_categoria" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="id_marca" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="id_modelo" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].Columns[id_producto]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-GB07G61.BiciMundo]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GB07G61.BiciMundo]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO.Inputs[Lookup Input].Columns[id_producto]"
+                      cachedDataType="i4"
+                      cachedName="id_producto"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output].Columns[id_producto]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">id_producto</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO.Outputs[Lookup Match Output].Columns[id_categoria]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO.Outputs[Lookup Match Output].Columns[id_categoria]"
+                      name="id_categoria"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">id_categoria</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA.Paths[Aggregate Output 1]"
+              endId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Data Conversion.Inputs[Data Conversion Input]"
+              name="Aggregate Output 1"
+              startId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\AGREGAR.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA.Paths[Data Conversion Output]"
+              endId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination.Inputs[Excel Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA.Paths[Lookup Match Output]"
+              endId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA.Paths[Lookup Match Output1]"
+              endId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\AGREGAR.Inputs[Aggregate Input 1]"
+              name="Lookup Match Output"
+              startId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA.Paths[OLE DB Source Output]"
+              endId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="285,42"
+          Id="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA"
+          TopLeft="248.5,59.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="136,42"
+          Id="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA"
+          TopLeft="340.125252525253,239.563636363636" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA"
+          TopLeft="333,29" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO"
+          TopLeft="343.703030303031,87.850505050505" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\AGREGAR"
+          TopLeft="351.317171717171,311.151515151515" />
+        <EdgeLayout
+          Id="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA.Paths[OLE DB Source Output]"
+          TopLeft="492,50">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-15.2969696969694,58.850505050505"
+              Start="0,0"
+              End="-7.79696969696937,58.850505050505">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,54.850505050505" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,54.850505050505"
+                    Point2="22.5,58.850505050505"
+                    Point3="18.5,58.850505050505" />
+                  <mssgle:LineSegment
+                    End="-7.79696969696937,58.850505050505" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA.Paths[Lookup Match Output1]"
+          TopLeft="410.971212121212,281.563636363636">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.5878787878784"
+              Start="0,0"
+              End="0,22.0878787878784">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.0878787878784" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,5.23925189393918,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA.Paths[Lookup Match Output]"
+          TopLeft="409.164141414142,129.850505050505">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,109.713131313131"
+              Start="0,0"
+              End="0,102.213131313131">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,102.213131313131" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,45.3018781565657,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Data Conversion"
+          TopLeft="338.589898989899,388.252525252525" />
+        <EdgeLayout
+          Id="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA.Paths[Aggregate Output 1]"
+          TopLeft="415.203535353535,353.151515151515">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.1010101010104"
+              Start="0,0"
+              End="0,27.6010101010104">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.6010101010104" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="159,42"
+          Id="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination"
+          TopLeft="336.666666666667,455.833333333333" />
+        <EdgeLayout
+          Id="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA.Paths[Data Conversion Output]"
+          TopLeft="416.378282828283,430.252525252525">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.5808080808083"
+              Start="0,0"
+              End="0,18.0808080808083">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.0808080808083" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\DETALLE_VENTA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\PRODUCTO">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Producto]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\CATEGORIA">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Categoria]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PRODUCTOS_VENDIDOS_POR_CATEGORIA\Excel Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

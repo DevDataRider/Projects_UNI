@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\ProyectosBI_Tabular\\Proyecto Tabular BiciMundo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8CE414BB-95B2-4C99-9E03-51BA72086E22}|Proyecto Tabular BiciMundo\\Proyecto Tabular BiciMundo.smproj|C:\\ProyectosBI_Tabular\\Proyecto Tabular BiciMundo\\Proyecto Tabular BiciMundo\\Model.bim||{9EE154FA-5389-414A-9FA1-1D9F0221267D}",
+      "RelativeMoniker": "D:0:0:{8CE414BB-95B2-4C99-9E03-51BA72086E22}|Proyecto Tabular BiciMundo\\Proyecto Tabular BiciMundo.smproj|solutionrelative:Proyecto Tabular BiciMundo\\Model.bim||{9EE154FA-5389-414A-9FA1-1D9F0221267D}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Model.bim",
+              "DocumentMoniker": "C:\\ProyectosBI_Tabular\\Proyecto Tabular BiciMundo\\Proyecto Tabular BiciMundo\\Model.bim",
+              "RelativeDocumentMoniker": "Proyecto Tabular BiciMundo\\Model.bim",
+              "ToolTip": "C:\\ProyectosBI_Tabular\\Proyecto Tabular BiciMundo\\Proyecto Tabular BiciMundo\\Model.bim*",
+              "RelativeToolTip": "Proyecto Tabular BiciMundo\\Model.bim*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-07-18T23:55:21.858Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+"El dashboard de Excel requiere conexión a SSAS local con el cubo BiciMundo deployado. Para visualizar sin servidor, ver el dashboard en Power BI."

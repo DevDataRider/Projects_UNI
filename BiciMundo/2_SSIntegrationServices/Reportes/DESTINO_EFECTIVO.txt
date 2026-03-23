@@ -1,0 +1,14 @@
+id_venta,cantidad,precio_unitario,total_detalle,id_medio_pago,descripcion
+1,1,2599.50,2599.50,1,Efectivo
+6,1,119.90,119.90,1,Efectivo
+11,3,199.90,599.70,1,Efectivo
+16,1,99.90,99.90,1,Efectivo
+21,2,199.90,399.80,1,Efectivo
+26,2,120.00,240.00,1,Efectivo
+31,3,135.00,405.00,1,Efectivo
+36,3,200.00,600.00,1,Efectivo
+41,1,60.00,60.00,1,Efectivo
+46,3,75.00,225.00,1,Efectivo
+51,1,179.90,179.90,1,Efectivo
+56,1,249.90,249.90,1,Efectivo
+61,2,850.50,1701.00,1,Efectivo

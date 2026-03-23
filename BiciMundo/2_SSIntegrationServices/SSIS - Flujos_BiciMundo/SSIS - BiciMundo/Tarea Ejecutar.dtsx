@@ -1,0 +1,84 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/26/2025 11:51:09 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-GB07G61"
+  DTS:CreatorName="DESKTOP-GB07G61\christian pc"
+  DTS:DTSID="{2509419A-2141-40D6-8FFE-AFF0A4A462E1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="10250"
+  DTS:ObjectName="Tarea Ejecutar"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{F934632F-D6A9-4252-99E4-CC81D67CDD03}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-GB07G61.BiciMundo]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B5C21D5F-6DFA-492D-8BA5-4F2CD01ACDF6}"
+      DTS:ObjectName="DESKTOP-GB07G61.BiciMundo">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-GB07G61;Initial Catalog=BiciMundo;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{B5C21D5F-6DFA-492D-8BA5-4F2CD01ACDF6}DESKTOP-GB07G61.BiciMundo;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-GB07G61.BiciMundo 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{AD44691A-1A8D-4E8E-9662-680F9A500BAD}"
+      DTS:ObjectName="DESKTOP-GB07G61.BiciMundo 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-GB07G61;Initial Catalog=BiciMundo;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{AD44691A-1A8D-4E8E-9662-680F9A500BAD}DESKTOP-GB07G61.BiciMundo 1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ACTUALIZAR TELÉFONO A PARTIR DEL ID_CLIENTE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{CE00767A-1110-4D1F-9FF4-AFFD0A6B3723}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ACTUALIZAR TELÉFONO A PARTIR DEL ID_CLIENTE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AD44691A-1A8D-4E8E-9662-680F9A500BAD}"
+          SQLTask:SqlStatementSource="UPDATE Cliente&#xA;SET telefono = '965422035'&#xA;WHERE id_cliente = 10" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="326,42"
+          Id="Package\ACTUALIZAR TELÉFONO A PARTIR DEL ID_CLIENTE"
+          TopLeft="256,69" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

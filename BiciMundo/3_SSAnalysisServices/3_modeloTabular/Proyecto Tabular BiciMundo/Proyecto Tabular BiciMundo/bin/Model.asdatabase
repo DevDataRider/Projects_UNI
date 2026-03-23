@@ -1,0 +1,393 @@
+{
+  "name": "Proyecto Tabular BiciMundo",
+  "compatibilityLevel": 1600,
+  "model": {
+    "name": "Modelo",
+    "culture": "es-PE",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SQL/localhost;BiciMundo_DataMart",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": "localhost",
+            "database": "BiciMundo_DataMart"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "credential": {
+          "AuthenticationKind": "ServiceAccount",
+          "EncryptConnection": false
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "Dim_Clientes",
+        "columns": [
+          {
+            "name": "ClienteSK",
+            "dataType": "int64",
+            "sourceColumn": "ClienteSK"
+          },
+          {
+            "name": "id_cliente",
+            "dataType": "int64",
+            "sourceColumn": "id_cliente"
+          },
+          {
+            "name": "nombre_completo",
+            "dataType": "string",
+            "sourceColumn": "nombre_completo"
+          },
+          {
+            "name": "distrito",
+            "dataType": "string",
+            "sourceColumn": "distrito"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/localhost;BiciMundo_DataMart\",",
+                "    dbo_Dim_Clientes = Source{[Schema=\"dbo\",Item=\"Dim_Clientes\"]}[Data]",
+                "in",
+                "    dbo_Dim_Clientes"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Dim_Fecha",
+        "columns": [
+          {
+            "name": "FechaKey",
+            "dataType": "int64",
+            "sourceColumn": "FechaKey"
+          },
+          {
+            "name": "Fecha",
+            "dataType": "dateTime",
+            "sourceColumn": "Fecha"
+          },
+          {
+            "name": "Dia",
+            "dataType": "int64",
+            "sourceColumn": "Dia"
+          },
+          {
+            "name": "Mes",
+            "dataType": "int64",
+            "sourceColumn": "Mes"
+          },
+          {
+            "name": "NombreMes",
+            "dataType": "string",
+            "sourceColumn": "NombreMes"
+          },
+          {
+            "name": "Trimestre",
+            "dataType": "int64",
+            "sourceColumn": "Trimestre"
+          },
+          {
+            "name": "Anio",
+            "dataType": "int64",
+            "sourceColumn": "Anio"
+          },
+          {
+            "name": "Semana",
+            "dataType": "int64",
+            "sourceColumn": "Semana"
+          },
+          {
+            "name": "DiaSemana",
+            "dataType": "int64",
+            "sourceColumn": "DiaSemana"
+          },
+          {
+            "name": "NombreDia",
+            "dataType": "string",
+            "sourceColumn": "NombreDia"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/localhost;BiciMundo_DataMart\",",
+                "    dbo_Dim_Fecha = Source{[Schema=\"dbo\",Item=\"Dim_Fecha\"]}[Data]",
+                "in",
+                "    dbo_Dim_Fecha"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Dim_Orden",
+        "columns": [
+          {
+            "name": "OrdenSK",
+            "dataType": "int64",
+            "sourceColumn": "OrdenSK"
+          },
+          {
+            "name": "id_venta",
+            "dataType": "int64",
+            "sourceColumn": "id_venta"
+          },
+          {
+            "name": "fecha",
+            "dataType": "dateTime",
+            "sourceColumn": "fecha"
+          },
+          {
+            "name": "cliente_nombre",
+            "dataType": "string",
+            "sourceColumn": "cliente_nombre"
+          },
+          {
+            "name": "vendedor_nombre",
+            "dataType": "string",
+            "sourceColumn": "vendedor_nombre"
+          },
+          {
+            "name": "tipo_entrega",
+            "dataType": "string",
+            "sourceColumn": "tipo_entrega"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/localhost;BiciMundo_DataMart\",",
+                "    dbo_Dim_Orden = Source{[Schema=\"dbo\",Item=\"Dim_Orden\"]}[Data]",
+                "in",
+                "    dbo_Dim_Orden"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Dim_Productos",
+        "columns": [
+          {
+            "name": "ProductoSK",
+            "dataType": "int64",
+            "sourceColumn": "ProductoSK"
+          },
+          {
+            "name": "id_producto",
+            "dataType": "int64",
+            "sourceColumn": "id_producto"
+          },
+          {
+            "name": "nombre_producto",
+            "dataType": "string",
+            "sourceColumn": "nombre_producto"
+          },
+          {
+            "name": "categoria",
+            "dataType": "string",
+            "sourceColumn": "categoria"
+          },
+          {
+            "name": "marca",
+            "dataType": "string",
+            "sourceColumn": "marca"
+          },
+          {
+            "name": "modelo",
+            "dataType": "string",
+            "sourceColumn": "modelo"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/localhost;BiciMundo_DataMart\",",
+                "    dbo_Dim_Productos = Source{[Schema=\"dbo\",Item=\"Dim_Productos\"]}[Data]",
+                "in",
+                "    dbo_Dim_Productos"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Dim_Vendedores",
+        "columns": [
+          {
+            "name": "VendedorSK",
+            "dataType": "int64",
+            "sourceColumn": "VendedorSK"
+          },
+          {
+            "name": "id_vendedor",
+            "dataType": "int64",
+            "sourceColumn": "id_vendedor"
+          },
+          {
+            "name": "nombre_completo",
+            "dataType": "string",
+            "sourceColumn": "nombre_completo"
+          },
+          {
+            "name": "tienda",
+            "dataType": "string",
+            "sourceColumn": "tienda"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/localhost;BiciMundo_DataMart\",",
+                "    dbo_Dim_Vendedores = Source{[Schema=\"dbo\",Item=\"Dim_Vendedores\"]}[Data]",
+                "in",
+                "    dbo_Dim_Vendedores"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Fact_Ventas",
+        "columns": [
+          {
+            "name": "VentaSK",
+            "dataType": "int64",
+            "sourceColumn": "VentaSK"
+          },
+          {
+            "name": "OrdenSK",
+            "dataType": "int64",
+            "sourceColumn": "OrdenSK"
+          },
+          {
+            "name": "ProductoSK",
+            "dataType": "int64",
+            "sourceColumn": "ProductoSK"
+          },
+          {
+            "name": "ClienteSK",
+            "dataType": "int64",
+            "sourceColumn": "ClienteSK"
+          },
+          {
+            "name": "VendedorSK",
+            "dataType": "int64",
+            "sourceColumn": "VendedorSK"
+          },
+          {
+            "name": "FechaKey",
+            "dataType": "int64",
+            "sourceColumn": "FechaKey"
+          },
+          {
+            "name": "cantidad",
+            "dataType": "int64",
+            "sourceColumn": "cantidad"
+          },
+          {
+            "name": "precio_unitario",
+            "dataType": "double",
+            "sourceColumn": "precio_unitario"
+          },
+          {
+            "name": "monto_total",
+            "dataType": "double",
+            "sourceColumn": "monto_total"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/localhost;BiciMundo_DataMart\",",
+                "    dbo_Fact_Ventas = Source{[Schema=\"dbo\",Item=\"Fact_Ventas\"]}[Data]",
+                "in",
+                "    dbo_Fact_Ventas"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "4ee4b09e-b341-4d42-98bd-bcc367543da3",
+        "fromTable": "Fact_Ventas",
+        "fromColumn": "ClienteSK",
+        "toTable": "Dim_Clientes",
+        "toColumn": "ClienteSK"
+      },
+      {
+        "name": "0711e35f-4331-4656-9204-146ef310fe77",
+        "fromTable": "Fact_Ventas",
+        "fromColumn": "FechaKey",
+        "toTable": "Dim_Fecha",
+        "toColumn": "FechaKey"
+      },
+      {
+        "name": "57e325ac-f77a-464c-bb2f-68b990a1d658",
+        "fromTable": "Fact_Ventas",
+        "fromColumn": "OrdenSK",
+        "toTable": "Dim_Orden",
+        "toColumn": "OrdenSK"
+      },
+      {
+        "name": "3dc5e5bf-1857-4415-af05-821354ee8828",
+        "fromTable": "Fact_Ventas",
+        "fromColumn": "ProductoSK",
+        "toTable": "Dim_Productos",
+        "toColumn": "ProductoSK"
+      },
+      {
+        "name": "d3a4d69a-3124-4673-b4eb-6a44cdb88698",
+        "fromTable": "Fact_Ventas",
+        "fromColumn": "VendedorSK",
+        "toTable": "Dim_Vendedores",
+        "toColumn": "VendedorSK"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "700"
+      }
+    ]
+  }
+}

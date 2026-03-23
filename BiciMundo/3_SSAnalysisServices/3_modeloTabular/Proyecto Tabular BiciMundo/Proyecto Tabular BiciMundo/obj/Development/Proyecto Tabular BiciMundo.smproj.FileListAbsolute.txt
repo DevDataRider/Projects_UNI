@@ -1,0 +1,8 @@
+C:\ProyectosBI_Tabular\Proyecto Tabular BiciMundo\Proyecto Tabular BiciMundo\bin\Model.asdatabase
+C:\ProyectosBI_Tabular\Proyecto Tabular BiciMundo\Proyecto Tabular BiciMundo\bin\Model.deploymenttargets
+C:\ProyectosBI_Tabular\Proyecto Tabular BiciMundo\Proyecto Tabular BiciMundo\bin\Model.deploymentoptions
+C:\ProyectosBI_Tabular\Proyecto Tabular BiciMundo\Proyecto Tabular BiciMundo\obj\Development\Proyecto Tabular BiciMundo.smproj.AssemblyReference.cache
+C:\ProyectosBI_Tabular\Proyecto Tabular BiciMundo\Proyecto Tabular BiciMundo\obj\Development\Proyecto Tabular BiciMundo.smproj.CoreCompileInputs.cache
+C:\ProyectosBI_Tabular\Proyecto Tabular BiciMundo\Proyecto Tabular BiciMundo\obj\Development\Model.asdatabase
+C:\ProyectosBI_Tabular\Proyecto Tabular BiciMundo\Proyecto Tabular BiciMundo\obj\Development\Model.deploymentoptions
+C:\ProyectosBI_Tabular\Proyecto Tabular BiciMundo\Proyecto Tabular BiciMundo\obj\Development\Model.deploymenttargets

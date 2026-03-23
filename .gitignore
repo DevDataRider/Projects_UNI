@@ -1,0 +1,16 @@
+# Logs
+*.log
+logs/
+writable/logs/
+writable/uploads/
+writable/session/
+
+# Node modules
+node_modules/
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Mac
+.DS_Store

@@ -1,0 +1,7 @@
+nombre_categoria,Total_Unidades,Total_Ventas
+Vestimenta,28,3653.50
+Herramientas,7,774.60
+Accesorios,45,5917.80
+Squirt Cycling,6,319.50
+Bicicletas,8,30199.20
+Componentes,24,5719.60

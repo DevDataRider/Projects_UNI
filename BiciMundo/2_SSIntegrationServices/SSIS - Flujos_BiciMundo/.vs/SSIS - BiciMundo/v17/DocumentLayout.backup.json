@@ -1,0 +1,116 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\ProyectosBI\\SSIS - BiciMundo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B0405BDE-6C4B-40A1-31AC-BE2DF552BBB1}|SSIS - BiciMundo\\SSIS - BiciMundo.dtproj|C:\\ProyectosBI\\SSIS - BiciMundo\\SSIS - BiciMundo\\VentasPorMedioPago.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{B0405BDE-6C4B-40A1-31AC-BE2DF552BBB1}|SSIS - BiciMundo\\SSIS - BiciMundo.dtproj|solutionrelative:SSIS - BiciMundo\\VentasPorMedioPago.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0405BDE-6C4B-40A1-31AC-BE2DF552BBB1}|SSIS - BiciMundo\\SSIS - BiciMundo.dtproj|C:\\ProyectosBI\\SSIS - BiciMundo\\SSIS - BiciMundo\\FlujoResumenCategorias.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{B0405BDE-6C4B-40A1-31AC-BE2DF552BBB1}|SSIS - BiciMundo\\SSIS - BiciMundo.dtproj|solutionrelative:SSIS - BiciMundo\\FlujoResumenCategorias.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0405BDE-6C4B-40A1-31AC-BE2DF552BBB1}|SSIS - BiciMundo\\SSIS - BiciMundo.dtproj|C:\\ProyectosBI\\SSIS - BiciMundo\\SSIS - BiciMundo\\Tarea Ejecutar.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{B0405BDE-6C4B-40A1-31AC-BE2DF552BBB1}|SSIS - BiciMundo\\SSIS - BiciMundo.dtproj|solutionrelative:SSIS - BiciMundo\\Tarea Ejecutar.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0405BDE-6C4B-40A1-31AC-BE2DF552BBB1}|SSIS - BiciMundo\\SSIS - BiciMundo.dtproj|C:\\ProyectosBI\\SSIS - BiciMundo\\SSIS - BiciMundo\\Tarea Flujo de Datos.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{B0405BDE-6C4B-40A1-31AC-BE2DF552BBB1}|SSIS - BiciMundo\\SSIS - BiciMundo.dtproj|solutionrelative:SSIS - BiciMundo\\Tarea Flujo de Datos.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0405BDE-6C4B-40A1-31AC-BE2DF552BBB1}|SSIS - BiciMundo\\SSIS - BiciMundo.dtproj|C:\\ProyectosBI\\SSIS - BiciMundo\\SSIS - BiciMundo\\Tarea de Expresion.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{B0405BDE-6C4B-40A1-31AC-BE2DF552BBB1}|SSIS - BiciMundo\\SSIS - BiciMundo.dtproj|solutionrelative:SSIS - BiciMundo\\Tarea de Expresion.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0405BDE-6C4B-40A1-31AC-BE2DF552BBB1}|SSIS - BiciMundo\\SSIS - BiciMundo.dtproj|C:\\ProyectosBI\\SSIS - BiciMundo\\SSIS - BiciMundo\\RankingVentasTienda.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{B0405BDE-6C4B-40A1-31AC-BE2DF552BBB1}|SSIS - BiciMundo\\SSIS - BiciMundo.dtproj|solutionrelative:SSIS - BiciMundo\\RankingVentasTienda.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VentasPorMedioPago.dtsx [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\ProyectosBI\\SSIS - BiciMundo\\SSIS - BiciMundo\\VentasPorMedioPago.dtsx",
+              "RelativeDocumentMoniker": "SSIS - BiciMundo\\VentasPorMedioPago.dtsx",
+              "ToolTip": "C:\\ProyectosBI\\SSIS - BiciMundo\\SSIS - BiciMundo\\VentasPorMedioPago.dtsx [Dise\u00F1o]*",
+              "RelativeToolTip": "SSIS - BiciMundo\\VentasPorMedioPago.dtsx [Dise\u00F1o]*",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFTSURBVDhPY2QAgqUbD/8H0bjAu49fGG7fvZ8\u002BqTFrFlQIAv7/h\u002BgDGfDv71\u002BcePKi7f9NPZP/59VPSwNrQAJMUJogaK0pZDh\u002B6uxMdEOINqC6pR9MgwwBM6CABUqDQcWCa1AWA0NHghac//k9G0NcZAiYvWj5GjANAxgu\u002BC2rAcYwAGJz6NkxZEe7QUVQAYYBrI9vgDEMwPhffkEFsAFCsfDp\u002B9//D98jYgOqDQwIBiLI5vc/GBjefP/PwMLGARVFABQDQIEGwyCArPnNdwaGf1iSG85ARNb8\u002BhsDwweQAb\u002BBAmgAZyAia371lYHh7MnrDI9/yzA4hhQwlM29/J/BeCbYPSjpABT3MJvf//jP8BZoK4j95TfE7SD5hy\u002B\u002BMFy5846hCyyCZMDUpbugLFxABq75zPU3UDGoAaDchp7C0AHI6TDNyAaAszNRAOpnFHA2nREAjMTvHMVXB8cAAAAASUVORK5CYII=",
+              "WhenOpened": "2025-05-30T06:51:16.802Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Tarea Ejecutar.dtsx [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\ProyectosBI\\SSIS - BiciMundo\\SSIS - BiciMundo\\Tarea Ejecutar.dtsx",
+              "RelativeDocumentMoniker": "SSIS - BiciMundo\\Tarea Ejecutar.dtsx",
+              "ToolTip": "C:\\ProyectosBI\\SSIS - BiciMundo\\SSIS - BiciMundo\\Tarea Ejecutar.dtsx [Dise\u00F1o]",
+              "RelativeToolTip": "SSIS - BiciMundo\\Tarea Ejecutar.dtsx [Dise\u00F1o]",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFTSURBVDhPY2QAgqUbD/8H0bjAu49fGG7fvZ8\u002BqTFrFlQIAv7/h\u002BgDGfDv71\u002BcePKi7f9NPZP/59VPSwNrQAJMUJogaK0pZDh\u002B6uxMdEOINqC6pR9MgwwBM6CABUqDQcWCa1AWA0NHghac//k9G0NcZAiYvWj5GjANAxgu\u002BC2rAcYwAGJz6NkxZEe7QUVQAYYBrI9vgDEMwPhffkEFsAFCsfDp\u002B9//D98jYgOqDQwIBiLI5vc/GBjefP/PwMLGARVFABQDQIEGwyCArPnNdwaGf1iSG85ARNb8\u002BhsDwweQAb\u002BBAmgAZyAia371lYHh7MnrDI9/yzA4hhQwlM29/J/BeCbYPSjpABT3MJvf//jP8BZoK4j95TfE7SD5hy\u002B\u002BMFy5846hCyyCZMDUpbugLFxABq75zPU3UDGoAaDchp7C0AHI6TDNyAaAszNRAOpnFHA2nREAjMTvHMVXB8cAAAAASUVORK5CYII=",
+              "WhenOpened": "2025-05-27T04:51:09.773Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Tarea Flujo de Datos.dtsx [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\ProyectosBI\\SSIS - BiciMundo\\SSIS - BiciMundo\\Tarea Flujo de Datos.dtsx",
+              "RelativeDocumentMoniker": "SSIS - BiciMundo\\Tarea Flujo de Datos.dtsx",
+              "ToolTip": "C:\\ProyectosBI\\SSIS - BiciMundo\\SSIS - BiciMundo\\Tarea Flujo de Datos.dtsx [Dise\u00F1o]",
+              "RelativeToolTip": "SSIS - BiciMundo\\Tarea Flujo de Datos.dtsx [Dise\u00F1o]",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFTSURBVDhPY2QAgqUbD/8H0bjAu49fGG7fvZ8\u002BqTFrFlQIAv7/h\u002BgDGfDv71\u002BcePKi7f9NPZP/59VPSwNrQAJMUJogaK0pZDh\u002B6uxMdEOINqC6pR9MgwwBM6CABUqDQcWCa1AWA0NHghac//k9G0NcZAiYvWj5GjANAxgu\u002BC2rAcYwAGJz6NkxZEe7QUVQAYYBrI9vgDEMwPhffkEFsAFCsfDp\u002B9//D98jYgOqDQwIBiLI5vc/GBjefP/PwMLGARVFABQDQIEGwyCArPnNdwaGf1iSG85ARNb8\u002BhsDwweQAb\u002BBAmgAZyAia371lYHh7MnrDI9/yzA4hhQwlM29/J/BeCbYPSjpABT3MJvf//jP8BZoK4j95TfE7SD5hy\u002B\u002BMFy5846hCyyCZMDUpbugLFxABq75zPU3UDGoAaDchp7C0AHI6TDNyAaAszNRAOpnFHA2nREAjMTvHMVXB8cAAAAASUVORK5CYII=",
+              "WhenOpened": "2025-05-27T06:38:57.898Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FlujoResumenCategorias.dtsx [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\ProyectosBI\\SSIS - BiciMundo\\SSIS - BiciMundo\\FlujoResumenCategorias.dtsx",
+              "RelativeDocumentMoniker": "SSIS - BiciMundo\\FlujoResumenCategorias.dtsx",
+              "ToolTip": "C:\\ProyectosBI\\SSIS - BiciMundo\\SSIS - BiciMundo\\FlujoResumenCategorias.dtsx [Dise\u00F1o]",
+              "RelativeToolTip": "SSIS - BiciMundo\\FlujoResumenCategorias.dtsx [Dise\u00F1o]",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFTSURBVDhPY2QAgqUbD/8H0bjAu49fGG7fvZ8\u002BqTFrFlQIAv7/h\u002BgDGfDv71\u002BcePKi7f9NPZP/59VPSwNrQAJMUJogaK0pZDh\u002B6uxMdEOINqC6pR9MgwwBM6CABUqDQcWCa1AWA0NHghac//k9G0NcZAiYvWj5GjANAxgu\u002BC2rAcYwAGJz6NkxZEe7QUVQAYYBrI9vgDEMwPhffkEFsAFCsfDp\u002B9//D98jYgOqDQwIBiLI5vc/GBjefP/PwMLGARVFABQDQIEGwyCArPnNdwaGf1iSG85ARNb8\u002BhsDwweQAb\u002BBAmgAZyAia371lYHh7MnrDI9/yzA4hhQwlM29/J/BeCbYPSjpABT3MJvf//jP8BZoK4j95TfE7SD5hy\u002B\u002BMFy5846hCyyCZMDUpbugLFxABq75zPU3UDGoAaDchp7C0AHI6TDNyAaAszNRAOpnFHA2nREAjMTvHMVXB8cAAAAASUVORK5CYII=",
+              "WhenOpened": "2025-05-29T06:17:01.39Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Tarea de Expresion.dtsx [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\ProyectosBI\\SSIS - BiciMundo\\SSIS - BiciMundo\\Tarea de Expresion.dtsx",
+              "RelativeDocumentMoniker": "SSIS - BiciMundo\\Tarea de Expresion.dtsx",
+              "ToolTip": "C:\\ProyectosBI\\SSIS - BiciMundo\\SSIS - BiciMundo\\Tarea de Expresion.dtsx [Dise\u00F1o]",
+              "RelativeToolTip": "SSIS - BiciMundo\\Tarea de Expresion.dtsx [Dise\u00F1o]",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFTSURBVDhPY2QAgqUbD/8H0bjAu49fGG7fvZ8\u002BqTFrFlQIAv7/h\u002BgDGfDv71\u002BcePKi7f9NPZP/59VPSwNrQAJMUJogaK0pZDh\u002B6uxMdEOINqC6pR9MgwwBM6CABUqDQcWCa1AWA0NHghac//k9G0NcZAiYvWj5GjANAxgu\u002BC2rAcYwAGJz6NkxZEe7QUVQAYYBrI9vgDEMwPhffkEFsAFCsfDp\u002B9//D98jYgOqDQwIBiLI5vc/GBjefP/PwMLGARVFABQDQIEGwyCArPnNdwaGf1iSG85ARNb8\u002BhsDwweQAb\u002BBAmgAZyAia371lYHh7MnrDI9/yzA4hhQwlM29/J/BeCbYPSjpABT3MJvf//jP8BZoK4j95TfE7SD5hy\u002B\u002BMFy5846hCyyCZMDUpbugLFxABq75zPU3UDGoAaDchp7C0AHI6TDNyAaAszNRAOpnFHA2nREAjMTvHMVXB8cAAAAASUVORK5CYII=",
+              "WhenOpened": "2025-05-28T03:05:51.094Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RankingVentasTienda.dtsx [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\ProyectosBI\\SSIS - BiciMundo\\SSIS - BiciMundo\\RankingVentasTienda.dtsx",
+              "RelativeDocumentMoniker": "SSIS - BiciMundo\\RankingVentasTienda.dtsx",
+              "ToolTip": "C:\\ProyectosBI\\SSIS - BiciMundo\\SSIS - BiciMundo\\RankingVentasTienda.dtsx [Dise\u00F1o]",
+              "RelativeToolTip": "SSIS - BiciMundo\\RankingVentasTienda.dtsx [Dise\u00F1o]",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFTSURBVDhPY2QAgqUbD/8H0bjAu49fGG7fvZ8\u002BqTFrFlQIAv7/h\u002BgDGfDv71\u002BcePKi7f9NPZP/59VPSwNrQAJMUJogaK0pZDh\u002B6uxMdEOINqC6pR9MgwwBM6CABUqDQcWCa1AWA0NHghac//k9G0NcZAiYvWj5GjANAxgu\u002BC2rAcYwAGJz6NkxZEe7QUVQAYYBrI9vgDEMwPhffkEFsAFCsfDp\u002B9//D98jYgOqDQwIBiLI5vc/GBjefP/PwMLGARVFABQDQIEGwyCArPnNdwaGf1iSG85ARNb8\u002BhsDwweQAb\u002BBAmgAZyAia371lYHh7MnrDI9/yzA4hhQwlM29/J/BeCbYPSjpABT3MJvf//jP8BZoK4j95TfE7SD5hy\u002B\u002BMFy5846hCyyCZMDUpbugLFxABq75zPU3UDGoAaDchp7C0AHI6TDNyAaAszNRAOpnFHA2nREAjMTvHMVXB8cAAAAASUVORK5CYII=",
+              "WhenOpened": "2025-05-28T05:28:10.655Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
