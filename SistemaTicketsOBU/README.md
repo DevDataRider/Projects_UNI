@@ -74,11 +74,12 @@ Desarrollar una solución tecnológica que mejore la eficiencia en la entrega de
 
 Este proyecto fue desarrollado en colaboración:
 
-Rider Bravo
-Desarrollo backend (PHP - CodeIgniter)
-Modelado de base de datos (MySQL)
-Lógica de negocio y gestión de sesiones
+**Rider Bravo**
+- Desarrollo backend (PHP - CodeIgniter)
+- Modelado de base de datos (MySQL)
+- Lógica de negocio y gestión de sesiones
 
-Verónica Mendoza
-Diseño de interfaz (UI)
-Desarrollo frontend (HTML, CSS, JavaScript)
+**Verónica Mendoza**
+- Diseño de interfaz (UI)
+- Desarrollo frontend (HTML, CSS, JavaScript)
+- QA
