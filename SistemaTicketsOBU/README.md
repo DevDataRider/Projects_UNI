@@ -79,7 +79,8 @@ Este proyecto fue desarrollado en colaboración:
 - Modelado de base de datos (MySQL)
 - Lógica de negocio y gestión de sesiones
 
-**Verónica Mendoza**
+**Verónica Aguilar**
+
 - Diseño de interfaz (UI)
 - Desarrollo frontend (HTML, CSS, JavaScript)
 - QA
