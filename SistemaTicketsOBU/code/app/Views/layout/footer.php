@@ -2,7 +2,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.5
     </div>
-    <strong>Copyright &copy; 2025 <a href="">RiVerOBU</a>.</strong> Desarrollo de Software.
+    <strong>Copyright &copy; 2025 <a href="">Comedor OBU</a>.</strong> Desarrollo de Software.
   </footer>
 
 <!-- jQuery 3 -->

@@ -109,10 +109,17 @@ public function historial()
 
     $ticketModel = new TicketModel();
 
-    $ticket = $ticketModel
+    $query = $ticketModel
         ->join('students', 'students.id = tickets.student_id')
         ->select('tickets.*, students.full_name, students.university_code, students.is_scholarship')
-        ->find($id);
+        ->where('tickets.id', $id);
+
+    // Solo un administrador puede ver el ticket de otro estudiante.
+    if (session()->get('perfil') !== 'Administrador') {
+        $query->where('tickets.student_id', session()->get('id_estudiante'));
+    }
+
+    $ticket = $query->first();
 
     if (!$ticket) {
         return redirect()->back()->with('error', 'Ticket no encontrado.');
@@ -152,9 +159,9 @@ public function historial()
         </style>
 
         <div class="contenedor">
-            <div class="titulo"> Ticket RiVerOBU Comedor Universitario</div>
-            <div class="dato"><strong>Nombre:</strong> ' . $ticket['full_name'] . '</div>
-            <div class="dato"><strong>Código Univ.:</strong> ' . $ticket['university_code'] . '</div>
+            <div class="titulo"> Ticket Comedor OBU</div>
+            <div class="dato"><strong>Nombre:</strong> ' . esc($ticket['full_name']) . '</div>
+            <div class="dato"><strong>Código Univ.:</strong> ' . esc($ticket['university_code']) . '</div>
             <div class="dato"><strong>Tipo de comida:</strong> ' . ($ticket['tipo_comida_id'] == 1 ? 'Desayuno' : 'Otro') . '</div>
             <div class="dato"><strong>Fecha:</strong> ' . $ticket['fecha'] . '</div>
             <div class="dato"><strong>N° Orden:</strong> ' . $nroOrden . '</div>

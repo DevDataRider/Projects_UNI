@@ -90,6 +90,7 @@
       <div class="modal-content">
 
         <form role="form" method="post" enctype="multipart/form-data" action="<?php echo base_url();?>Clientes/InsertarClientes">
+          <?= csrf_field() ?>
 
 
           <?php if (isset($ClientesError)) { ?>
@@ -208,6 +209,7 @@
       <div class="modal-content">
 
         <form role="form" method="post" enctype="multipart/form-data" action="<?php echo base_url();?>Clientes/EditarClientes">
+          <?= csrf_field() ?>
 
 
           <?php if (isset($editarClientesError)) { ?>

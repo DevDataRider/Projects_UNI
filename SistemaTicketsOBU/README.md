@@ -1,4 +1,4 @@
-# 🧾 Sistema de Tickets RiVerOBU
+# 🧾 Sistema de Tickets Comedor OBU
 
 Sistema web desarrollado para la gestión de tickets del servicio de desayuno universitario, diseñado para optimizar la atención y reducir tiempos de espera.
 
@@ -6,7 +6,7 @@ Sistema web desarrollado para la gestión de tickets del servicio de desayuno un
 
 ## 🎯 Descripción
 
-El proyecto **RiVerOBU** surge como una solución para evitar largas colas y la pérdida de tiempo en la distribución de desayunos dentro del entorno universitario.
+El proyecto **Comedor OBU** surge como una solución para evitar largas colas y la pérdida de tiempo en la distribución de desayunos dentro del entorno universitario.
 
 A través de este sistema, los usuarios pueden generar y gestionar tickets de manera digital, mejorando la organización y eficiencia del servicio.
 

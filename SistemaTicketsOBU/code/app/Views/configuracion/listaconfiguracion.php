@@ -50,6 +50,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <form method="post" action="<?= base_url('configuracion/editar') ?>">
+        <?= csrf_field() ?>
         <div class="modal-header" style="background-color: #3c8dbc; color:white;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Editar Configuración</h4>

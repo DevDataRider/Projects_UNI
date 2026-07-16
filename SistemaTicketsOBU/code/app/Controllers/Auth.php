@@ -5,13 +5,6 @@ namespace App\Controllers;
 use App\Models\LoginModels; // estudiantes
 use App\Models\AdminModel;  // admin (usuarios)
 
-//ADMIN
-//codigo: 2225220280
-//DNI: 12345678 
-
-//ALUMNO
-//CODIGO: 2225220281   
-//D
 class Auth extends BaseController
 {
     protected $LoginModels;
@@ -40,6 +33,7 @@ class Auth extends BaseController
             ->first();
 
         if ($student) {
+           session()->regenerate(true);
            session()->set([
     'id'               => $student['id'], // si lo usas para admin, lo puedes mantener
     'id_estudiante'    => $student['id'], // ✅ clave para que Ticket funcione
@@ -60,6 +54,7 @@ class Auth extends BaseController
             ->first();
 
         if ($admin) {
+            session()->regenerate(true);
             session()->set([
                 'id'               => $admin['id'],
                 'perfil'          => $admin['perfil'],

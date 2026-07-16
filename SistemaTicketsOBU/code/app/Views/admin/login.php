@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>RiVerOBU</title>
+  <title>Comedor OBU</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -268,7 +268,7 @@ background-size: cover; background-repeat: no-repeat; background-position: cente
   <div class="contenedor-izquierdo">
     <div class="login-box">
       <div class="login-logo">
-        <a href="../../index2.html"><b>RiVerOBU</b></a>
+        <a href="../../index2.html"><b>Comedor OBU</b></a>
       </div>
 
       <!-- /.login-logo -->
@@ -295,6 +295,7 @@ background-size: cover; background-repeat: no-repeat; background-position: cente
         <?php } ?>
 
         <form action="<?php echo base_url(); ?>Auth/SesionLogin" method="post">
+          <?= csrf_field() ?>
           <div class="form-group has-feedback">
             <input type="text" class="form-control" placeholder="Código Universitario" name="usuario">
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

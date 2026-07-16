@@ -16,7 +16,8 @@ class Filters extends BaseConfig
      * make reading things nicer and simpler.
      */
     public array $aliases = [
-        'auth' => \App\Filters\AuthFilter::class,
+        'auth'      => \App\Filters\AuthFilter::class,
+        'adminOnly' => \App\Filters\AdminOnlyFilter::class,
         'csrf'          => CSRF::class,
         'toolbar'       => DebugToolbar::class,
         'honeypot'      => Honeypot::class,
@@ -27,11 +28,20 @@ class Filters extends BaseConfig
     /**
      * List of filter aliases that are always
      * applied before and after every request.
+     *
+     * 'auth' and 'adminOnly' are applied globally (matched against the raw
+     * request URI) rather than only to the explicit routes declared in
+     * Config/Routes.php, because $routes->setAutoRoute(true) lets requests
+     * reach controller actions (e.g. estudiantes/insertar) that have no
+     * matching explicit route entry, and a filter attached only to a route
+     * group does not cover those auto-routed URIs.
      */
     public array $globals = [
         'before' => [
+            'csrf',
+            'auth'      => ['except' => ['/', 'auth*']],
+            'adminOnly' => ['except' => ['/', 'auth*', 'perfil*', 'ticket/*', 'ticketestudiante*']],
             // 'honeypot',
-            // 'csrf',
             // 'invalidchars',
         ],
         'after' => [

@@ -11,6 +11,7 @@
       </div>
 
       <form action="<?= base_url('perfil/actualizar') ?>" method="post">
+        <?= csrf_field() ?>
         <div class="box-body">
           <div class="form-group">
             <label for="full_name">Nombre Completo</label>

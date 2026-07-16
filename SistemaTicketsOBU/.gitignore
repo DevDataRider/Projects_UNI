@@ -1,0 +1,18 @@
+# Environment / secrets
+code/.env
+
+# Runtime-generated writable content (keep the directory structure via index.html placeholders)
+code/writable/cache/*
+!code/writable/cache/index.html
+code/writable/debugbar/*
+!code/writable/debugbar/.gitkeep
+code/writable/logs/*
+!code/writable/logs/index.html
+code/writable/session/*
+!code/writable/session/index.html
+code/writable/uploads/*
+!code/writable/uploads/index.html
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db

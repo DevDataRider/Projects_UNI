@@ -107,6 +107,7 @@
         url: "<?= base_url('TicketEstudiante/registrar') ?>",
         type: "POST",
         dataType: "json",
+        data: { "<?= csrf_token() ?>": "<?= csrf_hash() ?>" },
         success: function (response) {
           if (response.status === 'ok') {
             $("#modalNombre").text(response.nombre);

@@ -69,6 +69,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <form id="formAgregarActividad" method="post" action="<?= base_url('actividades/insertar') ?>">
+        <?= csrf_field() ?>
         <div class="modal-header" style="background-color: #3c8dbc; color:white;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Registrar Actividad</h4>
@@ -107,6 +108,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <form id="formEditarActividad" method="post" action="<?= base_url('actividades/editar') ?>">
+        <?= csrf_field() ?>
         <div class="modal-header" style="background-color: #3c8dbc; color:white;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Editar Actividad</h4>

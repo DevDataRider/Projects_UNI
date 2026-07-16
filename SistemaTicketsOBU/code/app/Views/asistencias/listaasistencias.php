@@ -78,6 +78,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <form id="formAgregarAsistencia" method="post" action="<?= base_url('asistencias/insertar') ?>">
+        <?= csrf_field() ?>
         <div class="modal-header" style="background-color: #3c8dbc; color:white;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Registrar Asistencia</h4>
@@ -113,6 +114,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <form id="formEditarAsistencia" method="post" action="<?= base_url('asistencias/editar') ?>">
+        <?= csrf_field() ?>
         <div class="modal-header" style="background-color: #3c8dbc; color:white;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Editar Asistencia</h4>

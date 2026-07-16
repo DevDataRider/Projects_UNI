@@ -92,6 +92,7 @@
   <div class="modal-dialog" >
     <div class="modal-content" >
       <form id="formAgregarEstudiante" method="post" action="<?= base_url('estudiantes/insertar') ?>">
+        <?= csrf_field() ?>
         <div class="modal-header" style="background-color: #1e3fa4; color:white;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Agregar Estudiante</h4>
@@ -119,6 +120,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <form id="formEditarEstudiante" method="post" action="<?= base_url('estudiantes/editar') ?>">
+        <?= csrf_field() ?>
         <div class="modal-header" style="background-color: #3c8dbc; color:white;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Editar Estudiante</h4>
