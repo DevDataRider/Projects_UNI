@@ -5,6 +5,83 @@
     <strong>Copyright &copy; 2026 <a href="">Comedor OBU</a>.</strong> Desarrollo de Software.
   </footer>
 
+<!-- Modal de Confirmación - Cerrar Sesión -->
+<div class="modal fade" id="modalCerrarSesion" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content text-center">
+      <div class="modal-header" style="background-color:#1e3fa4; color:#fff;">
+        <button type="button" class="close" data-dismiss="modal" style="color:#fff; opacity:0.9;">&times;</button>
+        <h4 class="modal-title"><i class="fa fa-sign-out"></i> Cerrar Sesión</h4>
+      </div>
+      <div class="modal-body">
+        <p>¿Estás seguro de que quieres cerrar sesión?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <a href="#" id="linkConfirmarLogout" class="btn btn-danger">Sí, cerrar sesión</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #modalCerrarSesion .modal-dialog {
+    max-width: 490px;
+    width: 90%;
+    margin: 80px auto 0;
+  }
+
+  #modalCerrarSesion .modal-content {
+    border-radius: 18px;
+    overflow: hidden;
+    border: none;
+  }
+
+  #modalCerrarSesion .modal-header {
+    border-radius: 0;
+    padding: 22px 24px;
+  }
+
+  #modalCerrarSesion .modal-title {
+    font-size: 1.82rem;
+  }
+
+  #modalCerrarSesion .close {
+    font-size: 29px;
+  }
+
+  #modalCerrarSesion .modal-body {
+    padding: 40px 30px;
+  }
+
+  #modalCerrarSesion .modal-body p {
+    font-size: 1.68rem;
+    text-align: center;
+    margin: 0;
+  }
+
+  #modalCerrarSesion .modal-footer {
+    padding: 18px 24px 26px;
+    text-align: center;
+  }
+
+  #modalCerrarSesion .btn {
+    border-radius: 8px;
+    padding: 11px 26px;
+    font-size: 1.12rem;
+  }
+
+  #modalCerrarSesion .btn-danger {
+    background-color: #ff6b6b;
+    border-color: #ff6b6b;
+  }
+
+  #modalCerrarSesion .btn-danger:hover {
+    background-color: #ff5252;
+    border-color: #ff5252;
+  }
+</style>
+
 <!-- jQuery 3 -->
 <script src="<?php echo base_url();?>bower_components/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -72,7 +149,13 @@
 
 <script src="<?php echo base_url();?>js/cotizaciones.js"></script>
 
-
+<script>
+  $(document).on('click', '.btn-logout-confirm', function (e) {
+    e.preventDefault();
+    $('#linkConfirmarLogout').attr('href', $(this).attr('href'));
+    $('#modalCerrarSesion').modal('show');
+  });
+</script>
 
 
 

@@ -31,7 +31,7 @@
       </li>      
 
       <li class="logout">
-        <a href="<?= base_url("auth/logout") ?>">
+        <a href="<?= base_url("auth/logout") ?>" class="btn-logout-confirm">
           <i class="fa fa-sign-out text-danger"></i> <span>Cerrar Sesión</span>
         </a>
       </li>
