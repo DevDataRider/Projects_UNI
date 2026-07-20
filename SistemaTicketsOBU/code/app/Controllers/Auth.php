@@ -18,7 +18,13 @@ class Auth extends BaseController
 
     public function index()
     {
-        return view('admin/login');
+        // El filtro CSRF redirige aquí con flashdata cuando el token expiró o no coincidía
+        // (p. ej. al borrar cookies del navegador); se muestra como el resto de errores de login.
+        $csrfError = session()->getFlashdata('error');
+
+        return view('admin/login', [
+            'error' => $csrfError ? 'Tu sesión había expirado. Por favor, vuelve a intentarlo.' : null,
+        ]);
     }
 
     public function SesionLogin()

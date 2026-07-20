@@ -44,6 +44,7 @@
               <th>Código Univ.</th>
               <th>DNI</th>
               <th>Correo</th>
+              <th>Facultad</th>
               <th>Celular</th>
               <th>Género</th>
               <th>Becado</th>
@@ -58,6 +59,7 @@
                 <td><?= esc($e['university_code']) ?></td>
                 <td><?= esc($e['dni']) ?></td>
                 <td><?= esc($e['email_institutional']) ?></td>
+                <td><?= esc($e['facultad']) ?></td>
                 <td><?= esc($e['mobile']) ?></td>
                 <td><?= esc($e['gender']) ?></td>
                 <td><?= $e['is_scholarship'] ? 'Sí' : 'No' ?></td>
@@ -68,6 +70,7 @@
                     data-dni="<?= esc($e['dni']) ?>"
                     data-university_code="<?= esc($e['university_code']) ?>"
                     data-email_institutional="<?= esc($e['email_institutional']) ?>"
+                    data-facultad="<?= esc($e['facultad']) ?>"
                     data-mobile="<?= esc($e['mobile']) ?>"
                     data-gender="<?= esc($e['gender']) ?>"
                     data-is_scholarship="<?= $e['is_scholarship'] ?>"
@@ -102,6 +105,7 @@
           <div class="form-group"><label>DNI</label><input type="text" name="dni" class="form-control" required></div>
           <div class="form-group"><label>Código Universitario</label><input type="text" name="university_code" class="form-control" required></div>
           <div class="form-group"><label>Correo Institucional</label><input type="email" name="email_institutional" class="form-control"></div>
+          <div class="form-group"><label>Facultad</label><input type="text" name="facultad" class="form-control"></div>
           <div class="form-group"><label>Celular</label><input type="text" name="mobile" class="form-control"></div>
           <div class="form-group"><label>Género</label><select name="gender" class="form-control" required><option value="">-- Seleccionar --</option><option value="masculino">Masculino</option><option value="femenino">Femenino</option><option value="otro">Otro</option></select></div>
           <div class="form-group"><label>¿Becado?</label><select name="is_scholarship" class="form-control" required><option value="">-- Seleccionar --</option><option value="1">Sí</option><option value="0">No</option></select></div>
@@ -131,6 +135,7 @@
           <div class="form-group"><label>DNI</label><input type="text" name="dni" id="editarDni" class="form-control" required></div>
           <div class="form-group"><label>Código Universitario</label><input type="text" name="university_code" id="editarCodigo" class="form-control" required></div>
           <div class="form-group"><label>Correo Institucional</label><input type="email" name="email_institutional" id="editarCorreo" class="form-control"></div>
+          <div class="form-group"><label>Facultad</label><input type="text" name="facultad" id="editarFacultad" class="form-control"></div>
           <div class="form-group"><label>Celular</label><input type="text" name="mobile" id="editarCelular" class="form-control"></div>
           <div class="form-group">
             <label>Género</label>
@@ -179,6 +184,7 @@
     $("#editarDni").val($(this).data("dni"));
     $("#editarCodigo").val($(this).data("university_code"));
     $("#editarCorreo").val($(this).data("email_institutional"));
+    $("#editarFacultad").val($(this).data("facultad"));
     $("#editarCelular").val($(this).data("mobile"));
     $("#editarGenero").val($(this).data("gender"));
     $("#editarBeca").val($(this).data("is_scholarship"));

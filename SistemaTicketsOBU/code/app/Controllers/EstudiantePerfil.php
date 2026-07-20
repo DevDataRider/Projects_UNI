@@ -14,10 +14,10 @@ class EstudiantePerfil extends BaseController
 
         $data['perfil'] = $modelo->find($id);
 
-        return view('Layout/header')
-            . view('Layout/aside')
+        return view('layout/header')
+            . view('layout/aside')
             . view('EstudiantePerfil/index', $data)
-            . view('Layout/footer');
+            . view('layout/footer');
     }
 
     public function actualizar()

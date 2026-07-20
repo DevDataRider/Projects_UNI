@@ -1,3 +1,31 @@
+/* ----- Tipografía global: serif formal/académica, con jerarquía h1-h6 ampliada ----- */
+
+body,
+.content-wrapper,
+.main-sidebar,
+.box,
+.card,
+table {
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+}
+
+body {
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+h1 { font-size: 2.6rem; }
+h2 { font-size: 2.1rem; }
+h3 { font-size: 1.7rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; font-weight: 600; }
+h6 { font-size: 1rem;   font-weight: 600; }
+
 /* Estilos para panel limpio */
 .contenedor-panel {
   display: grid;
@@ -107,6 +135,12 @@
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+/* AdminLTE oculta el logo y las etiquetas del menú al colapsar el sidebar,
+   pero no conoce este título custom (no es un <li class="header"> nativo). */
+body.sidebar-collapse .sidebar-title {
+  display: none;
 }
 
 /* Forzar fondo claro del asasassidebar */

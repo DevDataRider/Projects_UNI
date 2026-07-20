@@ -9,6 +9,13 @@
   </section>
 
   <section class="content">
+    <?php if (session()->getFlashdata('error')): ?>
+      <div class="alert alert-danger"><?= esc(session()->getFlashdata('error')) ?></div>
+    <?php endif; ?>
+    <?php if (session()->getFlashdata('success')): ?>
+      <div class="alert alert-success"><?= esc(session()->getFlashdata('success')) ?></div>
+    <?php endif; ?>
+
     <div class="box">
       <div class="box-header with-border display">
         <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarTicket">
@@ -23,6 +30,7 @@
               <th style="width:10px;">#</th>
               <th>Estudiante</th>
               <th>Fecha</th>
+              <th>Hora</th>
               <th>Tipo de Comida</th>
               <th>Estado</th>
               <th>Acciones</th>
@@ -33,7 +41,8 @@
               <tr>
                 <td><?= $key + 1 ?></td>
                 <td><?= esc($t['full_name']) ?></td>
-                <td><?= esc($t['fecha']) ?></td>
+                <td><?= date('d-m-Y', strtotime($t['fecha'])) ?></td>
+                <td><?= date('h:i A', strtotime($t['created_at'])) ?></td>
                 <td>
                 <?php
                     switch ($t['tipo_comida_id']) {

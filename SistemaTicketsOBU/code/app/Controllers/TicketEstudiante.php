@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Libraries\HorarioComedor;
 use App\Models\TicketModel;
 
 use Dompdf\Dompdf;
@@ -14,16 +15,22 @@ class TicketEstudiante extends BaseController
     {
         $id = session()->get('id_estudiante');
         $fecha = date('Y-m-d');
-        $tipoComidaId = 2;
+        $tipoComidaId = HorarioComedor::turnoActual();
 
-        $modelo = new TicketModel();
-        $ticket = $modelo
-            ->where('student_id', $id)
-            ->where('fecha', $fecha)
-            ->where('tipo_comida_id', $tipoComidaId)
-            ->first();
+        $ticket = null;
+        if ($tipoComidaId !== null) {
+            $modelo = new TicketModel();
+            $ticket = $modelo
+                ->where('student_id', $id)
+                ->where('fecha', $fecha)
+                ->where('tipo_comida_id', $tipoComidaId)
+                ->first();
+        }
 
-        return view('Tickets/hoy', ['ticket' => $ticket]);
+        return view('tickets/hoy', [
+            'ticket'      => $ticket,
+            'turnoNombre' => $tipoComidaId !== null ? HorarioComedor::nombre($tipoComidaId) : null,
+        ]);
     }
 
    public function registrar()
@@ -38,17 +45,24 @@ class TicketEstudiante extends BaseController
     }
 
     // 🗓️ Validar que hoy sea lunes a viernes
-    $diaSemana = date('N'); // 1 = Lunes, ..., 7 = Domingo
-    if ($diaSemana > 5) {
+    if (!HorarioComedor::esDiaHabil()) {
         return $this->response->setJSON([
             'status' => 'error',
             'mensaje' => 'El registro de tickets solo está disponible de lunes a viernes.'
         ]);
     }
 
+    // 🕐 Validar que la hora actual caiga en un turno de atención
+    $tipoComidaId = HorarioComedor::turnoActual();
+    if ($tipoComidaId === null) {
+        return $this->response->setJSON([
+            'status' => 'error',
+            'mensaje' => 'Fuera de horario de atención. Turnos: Desayuno 7:00–9:30, Almuerzo 12:00–14:00, Cena 17:00–19:00.'
+        ]);
+    }
+
     $becado = session()->get('is_scholarship') ? 1 : 0;
     $fecha = date('Y-m-d');
-    $tipoComidaId = 2;
 
     $ticketModel = new \App\Models\TicketModel();
 
@@ -76,12 +90,14 @@ class TicketEstudiante extends BaseController
     return $this->response->setJSON([
         'status'      => 'ok',
         'mensaje'     => 'Registrado con éxito',
+        'ticket_id'   => $ticketId,
         'nro_orden'   => $nroOrden,
         'codigo_qr'   => $codigoQR,
         'nombre'      => session()->get('full_name'),
         'codigo'      => session()->get('university_code'),
         'fecha'       => $fecha,
-        'tipo'        => $tipoComidaId
+        'tipo'        => $tipoComidaId,
+        'tipo_nombre' => HorarioComedor::nombre($tipoComidaId)
     ]);
 }
 
@@ -97,10 +113,10 @@ public function historial()
     ->findAll();
 
 
-    return view('Layout/header')
-        . view('Layout/aside')
+    return view('layout/header')
+        . view('layout/aside')
         . view('Tickets/historial', $data)
-        . view('Layout/footer');
+        . view('layout/footer');
 }
 
    public function pdf($id = null)
@@ -162,7 +178,7 @@ public function historial()
             <div class="titulo"> Ticket Comedor OBU</div>
             <div class="dato"><strong>Nombre:</strong> ' . esc($ticket['full_name']) . '</div>
             <div class="dato"><strong>Código Univ.:</strong> ' . esc($ticket['university_code']) . '</div>
-            <div class="dato"><strong>Tipo de comida:</strong> ' . ($ticket['tipo_comida_id'] == 1 ? 'Desayuno' : 'Otro') . '</div>
+            <div class="dato"><strong>Tipo de comida:</strong> ' . esc(HorarioComedor::nombre((int) $ticket['tipo_comida_id']) ?? 'Desconocido') . '</div>
             <div class="dato"><strong>Fecha:</strong> ' . $ticket['fecha'] . '</div>
             <div class="dato"><strong>N° Orden:</strong> ' . $nroOrden . '</div>
             <div class="dato"><strong>Becado:</strong> ' . ($ticket['is_scholarship'] ? 'Sí' : 'No') . '</div>
@@ -171,7 +187,50 @@ public function historial()
     ';
 
     $pdf->writeHTML($html, true, false, true, false, '');
-    $pdf->Output('ticket_' . $ticket['id'] . '.pdf', 'D');
+
+    $becadoLabel = $ticket['is_scholarship'] ? 'Becado' : 'No';
+    $nombreLegible = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $ticket['full_name']) ?: $ticket['full_name'];
+    $nombreArchivo = "Ticket_{$nroOrden}_{$becadoLabel}_{$ticket['university_code']}_{$nombreLegible}";
+    $nombreArchivo = preg_replace('/[^A-Za-z0-9_-]+/', '_', $nombreArchivo);
+    $nombreArchivo = trim(preg_replace('/_+/', '_', $nombreArchivo), '_') . '.pdf';
+
+    $pdfContent = $pdf->Output($nombreArchivo, 'S');
+
+    return $this->response
+        ->setHeader('Content-Type', 'application/pdf')
+        ->setHeader('Content-Disposition', 'attachment; filename="' . $nombreArchivo . '"')
+        ->setBody($pdfContent);
 }
+
+    // Pantalla que ve el personal del comedor al escanear el QR del ticket.
+    public function verificar($id = null)
+    {
+        $ticketModel = new TicketModel();
+
+        $ticket = $ticketModel
+            ->join('students', 'students.id = tickets.student_id')
+            ->select('tickets.*, students.full_name, students.facultad, students.is_scholarship')
+            ->where('tickets.id', $id)
+            ->first();
+
+        if (!$ticket) {
+            return redirect()->back()->with('error', 'Ticket no encontrado.');
+        }
+
+        $nroOrden = $ticketModel->contarTicketsEmitidos(
+            $ticket['fecha'],
+            $ticket['tipo_comida_id'],
+            $ticket['is_scholarship']
+        );
+
+        return view('layout/header')
+            . view('layout/aside_admin')
+            . view('tickets/verificar', [
+                'ticket'      => $ticket,
+                'nroOrden'    => $nroOrden,
+                'turnoNombre' => HorarioComedor::nombre((int) $ticket['tipo_comida_id']) ?? 'Desconocido',
+            ])
+            . view('layout/footer');
+    }
 
 }

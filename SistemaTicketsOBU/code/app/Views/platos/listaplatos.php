@@ -35,13 +35,14 @@
             <?php foreach ($platos as $key => $p): ?>
               <tr>
                 <td><?= $key + 1 ?></td>
-                <td><?= esc($p['fecha']) ?></td>
-                <td>Almuerzo</td> <!-- Tipo fijo -->
+                <td><?= date('d-m-Y', strtotime($p['fecha'])) ?></td>
+                <td><?= esc(ucfirst($p['tipo_comida'])) ?></td>
                 <td><?= esc($p['descripcion']) ?></td>
                 <td>
                   <button class="btn btn-primary btnEditarPlato btn-sm" style="background-color:#1e3fa4;"
                     data-id="<?= $p['id'] ?>"
                     data-fecha="<?= $p['fecha'] ?>"
+                    data-tipo_comida_id="<?= $p['tipo_comida_id'] ?>"
                     data-descripcion="<?= esc($p['descripcion']) ?>"
                     data-toggle="modal" data-target="#modalEditarPlato">
                     <i class="fa fa-pencil"></i>
@@ -72,7 +73,15 @@
         </div>
         <div class="modal-body">
           <div class="form-group"><label>Fecha</label><input type="date" name="fecha" class="form-control" required></div>
-          <input type="hidden" name="tipo_comida_id" value="2"> <!-- Tipo fijo: Almuerzo -->
+          <div class="form-group">
+            <label>Tipo de Comida</label>
+            <select name="tipo_comida_id" class="form-control" required>
+              <option value="">-- Seleccionar --</option>
+              <option value="1">Desayuno (7:00–9:30)</option>
+              <option value="2">Almuerzo (12:00–14:00)</option>
+              <option value="3">Cena (17:00–19:00)</option>
+            </select>
+          </div>
           <div class="form-group"><label>Descripción</label><textarea name="descripcion" class="form-control" required></textarea></div>
         </div>
         <div class="modal-footer">
@@ -96,8 +105,16 @@
         </div>
         <div class="modal-body">
           <input type="hidden" name="id" id="editarPlatoId">
-          <input type="hidden" name="tipo_comida_id" value="2"> <!-- Tipo fijo: Almuerzo -->
           <div class="form-group"><label>Fecha</label><input type="date" name="fecha" id="editarFecha" class="form-control" required></div>
+          <div class="form-group">
+            <label>Tipo de Comida</label>
+            <select name="tipo_comida_id" id="editarTipoComida" class="form-control" required>
+              <option value="">-- Seleccionar --</option>
+              <option value="1">Desayuno (7:00–9:30)</option>
+              <option value="2">Almuerzo (12:00–14:00)</option>
+              <option value="3">Cena (17:00–19:00)</option>
+            </select>
+          </div>
           <div class="form-group"><label>Descripción</label><textarea name="descripcion" id="editarDescripcion" class="form-control" required></textarea></div>
         </div>
         <div class="modal-footer">
@@ -126,6 +143,7 @@ $(document).ready(function () {
   $(document).on("click", ".btnEditarPlato", function () {
     $("#editarPlatoId").val($(this).data("id"));
     $("#editarFecha").val($(this).data("fecha"));
+    $("#editarTipoComida").val($(this).data("tipo_comida_id"));
     $("#editarDescripcion").val($(this).data("descripcion"));
   });
 

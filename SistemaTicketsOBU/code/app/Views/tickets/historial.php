@@ -22,6 +22,7 @@
             <tr>
               <th>#</th>
               <th>Fecha</th>
+              <th>Hora</th>
               <th>Tipo de Comida</th>
               <th>Estado</th>
               <th>Acciones</th>
@@ -32,8 +33,9 @@
               <?php foreach ($tickets as $index => $ticket): ?>
                 <tr>
                   <td><?= $index + 1 ?></td>
-                  <td><?= date('d/m/Y', strtotime($ticket['fecha'])) ?></td>
-                  <td><?= ($ticket['tipo_comida_id'] == 2) ? 'Almuerzo' : 'No disponible' ?></td>
+                  <td><?= date('d-m-Y', strtotime($ticket['fecha'])) ?></td>
+                  <td><?= date('h:i A', strtotime($ticket['created_at'])) ?></td>
+                  <td><?= esc(\App\Libraries\HorarioComedor::nombre((int) $ticket['tipo_comida_id']) ?? 'Desconocido') ?></td>
                   <td>
                     <?php if ($ticket['estado'] == 'pendiente'): ?>
                       <span class="label label-warning">Pendiente</span>
@@ -55,7 +57,7 @@
               <?php endforeach; ?>
             <?php else: ?>
               <tr>
-                <td colspan="5" class="text-center">No tienes tickets generados aún.</td>
+                <td colspan="6" class="text-center">No tienes tickets generados aún.</td>
               </tr>
             <?php endif; ?>
           </tbody>

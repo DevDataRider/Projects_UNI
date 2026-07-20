@@ -14,6 +14,7 @@ class EstudiantesModel extends Model
         'dni',
         'university_code',
         'email_institutional',
+        'facultad',
         'mobile',
         'gender',
         'is_scholarship',

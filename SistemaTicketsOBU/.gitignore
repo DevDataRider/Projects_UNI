@@ -16,3 +16,11 @@ code/writable/uploads/*
 # OS/editor cruft
 .DS_Store
 Thumbs.db
+
+# Composer (regenerable via `composer install`; composer.lock stays tracked)
+code/vendor/
+code/composer.phar
+code/composer-setup.php
+
+# PHPUnit cache
+code/.phpunit.result.cache

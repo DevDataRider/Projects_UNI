@@ -52,28 +52,25 @@ $routes->group('', ['filter' => 'auth'], function($routes) {
     // Configuración
     $routes->get('configuracion', 'Configuracion::index');
 
-    // Tickets estudiante
+    // Tickets estudiante (dos alias usados en distintas vistas: ticket/* y TicketEstudiante/*)
     $routes->get('ticket/hoy', 'TicketEstudiante::hoy');
     $routes->get('ticket/historial', 'TicketEstudiante::historial');
-    $routes->get('ticket/pdf', 'TicketEstudiante::pdf');
-
-    
-    
-    $routes->get('TicketEstudiante/hoy', 'TicketEstudiante::hoy');
-
-    $routes->post('TicketEstudiante/registrar', 'TicketEstudiante::registrar');
     $routes->get('ticket/pdf/(:num)', 'TicketEstudiante::pdf/$1'); // Para recibir el ID
-    
+
+    $routes->get('TicketEstudiante/hoy', 'TicketEstudiante::hoy');
+    $routes->get('TicketEstudiante/historial', 'TicketEstudiante::historial');
+    $routes->get('TicketEstudiante/pdf/(:num)', 'TicketEstudiante::pdf/$1');
+    $routes->post('TicketEstudiante/registrar', 'TicketEstudiante::registrar');
+
+    // Verificación de ticket en el mostrador (personal del comedor escanea el QR)
+    $routes->get('verificar_ticket/(:num)', 'TicketEstudiante::verificar/$1');
+
      // Mi perfil
     $routes->get('perfil', 'EstudiantePerfil::index');
-    $routes->post('perfil/actualizar', 'EstudiantePerfil::actualizar');   
-    
+    $routes->post('perfil/actualizar', 'EstudiantePerfil::actualizar');
+
 
 });
-
-$routes->get('TicketEstudiante/hoy', 'TicketEstudiante::hoy');
-$routes->get('TicketEstudiante/historial', 'TicketEstudiante::historial');
-$routes->get('TicketEstudiante/pdf', 'TicketEstudiante::pdf');
 
 /*
  * --------------------------------------------------------------------

@@ -36,7 +36,7 @@
                 <td><?= $key + 1 ?></td>
                 <td><?= esc($i['full_name']) ?></td>
                 <td><?= esc($i['descripcion']) ?></td>
-                <td><?= esc($i['fecha']) ?></td>
+                <td><?= date('d-m-Y h:i A', strtotime($i['fecha'])) ?></td>
                 <td>
                   <button class="btn btn-primary btnEditarIncidencia"
                           data-id="<?= $i['id'] ?>"

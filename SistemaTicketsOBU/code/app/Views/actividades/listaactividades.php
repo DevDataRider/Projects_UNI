@@ -41,7 +41,7 @@
                 <td><?= $key + 1 ?></td>
                 <td><?= esc($a['full_name']) ?></td>
                 <td><?= esc($a['accion']) ?></td>
-                <td><?= esc($a['fecha']) ?></td>
+                <td><?= date('d-m-Y h:i A', strtotime($a['fecha'])) ?></td>
                 <td>
                   <button class="btn btn-primary btnEditarActividad"
                     data-id="<?= $a['id'] ?>"

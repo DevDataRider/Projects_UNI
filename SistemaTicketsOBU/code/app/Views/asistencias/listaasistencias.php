@@ -39,7 +39,7 @@
               <tr>
                 <td><?= $key + 1 ?></td>
                 <td><?= esc($a['full_name']) ?></td>
-                <td><?= esc($a['fecha']) ?></td>
+                <td><?= date('d-m-Y', strtotime($a['fecha'])) ?></td>
                 <td>
                   <?php
                     switch ($a['tipo_comida_id']) {
@@ -51,7 +51,7 @@
                   ?>
                 </td>
                 <td><?= esc($a['estado_ticket']) ?></td>
-                <td><?= esc($a['fecha_ingreso']) ?></td>
+                <td><?= date('d-m-Y h:i A', strtotime($a['fecha_ingreso'])) ?></td>
                 <td>
                   <button class="btn btn-primary btnEditarAsistencia"
                     data-id="<?= $a['id'] ?>"

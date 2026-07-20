@@ -22,7 +22,7 @@ class AsistenciasModel extends Model
         return $this->select('asistencias.*, tickets.student_id, tickets.fecha, tickets.tipo_comida_id, tickets.estado as estado_ticket, students.full_name')
                     ->join('tickets', 'tickets.id = asistencias.ticket_id')
                     ->join('students', 'students.id = tickets.student_id')
-                    ->orderBy('asistencias.id', 'DESC')
+                    ->orderBy('asistencias.fecha_ingreso', 'DESC')
                     ->findAll();
     }
 

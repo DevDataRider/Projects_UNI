@@ -1,5 +1,5 @@
-<?= $this->include('Layout/header') ?>
-<?= $this->include('Layout/aside') ?>
+<?= $this->include('layout/header') ?>
+<?= $this->include('layout/aside') ?>
 
 <div class="content-wrapper">
   <section class="content-header text-center mb-4">
@@ -15,14 +15,17 @@
         <div class="col-md-6">
           <div class="card custom-card shadow text-center">
             <div class="card-body">
-              <h4 class="card-title mb-3">👤 <?= esc(session('full_name')) ?></h4>
-              <p><i class="fa fa-id-badge"></i> <strong>Código:</strong> <?= esc(session('university_code')) ?></p>
-              <p><i class="fa fa-graduation-cap"></i> <strong>Becado:</strong> <?= session('is_scholarship') ? 'Sí' : 'No' ?></p>
+              <h4 class="card-title mb-3">🎟️ Ticket de Hoy</h4>
 
-              <?php if (!empty($ticket)): ?>
+              <?php if (empty($turnoNombre)): ?>
+                <div class="alert alert-secondary mt-4">
+                  <i class="fa fa-clock-o"></i> Fuera de horario de atención. Turnos: Desayuno 7:00–9:30, Almuerzo 12:00–14:00, Cena 17:00–19:00 (lunes a viernes).
+                </div>
+              <?php elseif (!empty($ticket)): ?>
                 <div class="alert alert-success text-start mt-4">
-                  <h5><i class="fa fa-check-circle"></i> Ticket Registrado</h5>
-                  <p><strong>Tipo de comida:</strong> <?= esc($ticket['tipo_comida_id']) ?></p>
+                  <h5><i class="fa fa-check-circle"></i> Ticket Registrado — <?= esc($turnoNombre) ?></h5>
+                  <p><i class="fa fa-user"></i> <strong>Estudiante:</strong> <?= esc(session('full_name')) ?></p>
+                  <p><i class="fa fa-id-badge"></i> <strong>Código:</strong> <?= esc(session('university_code')) ?></p>
                   <p><strong>Fecha:</strong> <?= esc($ticket['fecha']) ?></p>
                   <p><strong>Estado:</strong> <?= esc($ticket['estado']) ?></p>
                   <a href="<?= base_url('ticket/pdf/' . $ticket['id']) ?>" class="btn btn-outline-primary mt-2" target="_blank">
@@ -31,11 +34,11 @@
                 </div>
               <?php else: ?>
                 <div class="alert alert-warning mt-4">
-                  No tienes ticket generado para hoy.
+                  Turno actual: <strong><?= esc($turnoNombre) ?></strong>. No tienes ticket generado todavía.
                 </div>
 
                 <button class="btn btn-success btn-lg mt-3 shadow-sm rounded-pill px-4" id="btnRegistrarTicket">
-                  <i class="fa fa-check-circle"></i> Registrar Ticket
+                  <i class="fa fa-check-circle"></i> Registrar Ticket de <?= esc($turnoNombre) ?>
                 </button>
               <?php endif; ?>
             </div>
@@ -48,14 +51,11 @@
 </div>
 
 <!-- Modal de Confirmación (Éxito) -->
-<div class="modal fade" id="modalConfirmacion" tabindex="-1" role="dialog">
+<div class="modal fade" id="modalConfirmacion" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content text-center">
       <div class="modal-header bg-success text-white">
         <h5 class="modal-title">✅ Registrado con Éxito</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
       </div>
       <div class="modal-body">
         <p><strong>Nombre:</strong> <span id="modalNombre"></span></p>
@@ -68,7 +68,7 @@
         <img id="qrImagen" src="" class="img img-responsive center-block mt-3" style="max-width: 200px;" alt="Código QR">
       </div>
       <div class="modal-footer">
-        <button class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button class="btn btn-success" id="btnCerrarConfirmacion">Listo</button>
       </div>
     </div>
   </div>
@@ -94,7 +94,7 @@
   </div>
 </div>
 
-<?= $this->include('Layout/footer') ?>
+<?= $this->include('layout/footer') ?>
 
 <!-- Scripts Bootstrap 3 -->
 <script src="<?= base_url(); ?>bower_components/jquery/dist/jquery.min.js"></script>
@@ -103,6 +103,9 @@
 <script>
   $(document).ready(function () {
     $("#btnRegistrarTicket").click(function () {
+      var $btn = $(this);
+      $btn.prop("disabled", true).html('<i class="fa fa-spinner fa-spin"></i> Registrando...');
+
       $.ajax({
         url: "<?= base_url('TicketEstudiante/registrar') ?>",
         type: "POST",
@@ -113,21 +116,27 @@
             $("#modalNombre").text(response.nombre);
             $("#modalCodigo").text(response.codigo);
             $("#modalFecha").text(response.fecha);
-            $("#modalTipo").text(response.tipo == 1 ? "Desayuno" : response.tipo);
+            $("#modalTipo").text(response.tipo_nombre);
             $("#nroOrden").text(response.nro_orden);
             $("#qrImagen").attr('src', response.codigo_qr);
             $("#modalConfirmacion").modal('show');
           } else {
+            $btn.prop("disabled", false).html('<i class="fa fa-check-circle"></i> Registrar Ticket de <?= esc($turnoNombre) ?>');
             $("#mensajeError").text(response.mensaje);
             $("#modalError").modal('show');
           }
         },
         error: function (xhr, status, error) {
           console.log("🔴 Error:", error);
+          $btn.prop("disabled", false).html('<i class="fa fa-check-circle"></i> Registrar Ticket de <?= esc($turnoNombre) ?>');
           $("#mensajeError").text("Error inesperado. Intenta nuevamente.");
           $("#modalError").modal('show');
         }
       });
+    });
+
+    $("#btnCerrarConfirmacion").click(function () {
+      location.reload();
     });
   });
 </script>

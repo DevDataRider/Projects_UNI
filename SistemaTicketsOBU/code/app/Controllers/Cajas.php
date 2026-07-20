@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Libraries\HorarioComedor;
 use App\Models\CajasModels;
 use App\Models\PlatoModel;
 use App\Models\TicketModel; // ✅ Agrega esto
@@ -17,39 +18,30 @@ class Cajas extends BaseController
 
     public function index()
     {
-        // Obtener turno según hora actual
-        $horaActual = date('H:i:s');
-        $turno = null;
-
-        if ($horaActual >= '07:00:00' && $horaActual <= '08:30:00') {
-            $turno = 'desayuno';
-        } elseif ($horaActual >= '12:00:00' && $horaActual <= '14:00:00') {
-            $turno = 'almuerzo';
-        } elseif ($horaActual >= '18:00:00' && $horaActual <= '19:30:00') {
-            $turno = 'cena';
-        }
+        $tipoComidaId = HorarioComedor::turnoActual();
 
         $plato = null;
-        if ($turno) {
+        $ticket = null;
+
+        if ($tipoComidaId !== null) {
             $platoModel = new PlatoModel();
-            $plato = $platoModel
+            $plato = $platoModel->obtenerPlatoDelDia(date('Y-m-d'), $tipoComidaId);
+
+            // ✅ Obtener ticket del estudiante si ya fue generado hoy para el turno actual
+            $ticketModel = new TicketModel();
+            $ticket = $ticketModel
+                ->where('student_id', session('id_estudiante'))
                 ->where('fecha', date('Y-m-d'))
+                ->where('tipo_comida_id', $tipoComidaId)
                 ->first();
         }
-
-        // ✅ Obtener ticket del estudiante si ya fue generado hoy
-        $ticketModel = new TicketModel();
-        $ticket = $ticketModel
-            ->where('student_id', session('id_estudiante'))
-            ->where('fecha', date('Y-m-d'))
-            ->where('tipo_comida_id', 1)
-            ->first();
 
         $data = [
             "estudiantes" => $this->CajasModels->getEstudiantes(),
             "plato"       => $plato,
             "tickets"     => $this->CajasModels->getTickets(),
-            "ticket"      => $ticket // ✅ pasamos esto a la vista
+            "ticket"      => $ticket, // ✅ pasamos esto a la vista
+            "turnoNombre" => $tipoComidaId !== null ? HorarioComedor::nombre($tipoComidaId) : null,
         ];
 
         echo view('layout/header');

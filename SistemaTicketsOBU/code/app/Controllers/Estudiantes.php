@@ -32,6 +32,7 @@ class Estudiantes extends BaseController
             "dni" => $this->request->getPost("dni"),
             "university_code" => $this->request->getPost("university_code"),
             "email_institutional" => $this->request->getPost("email_institutional"),
+            "facultad" => $this->request->getPost("facultad"),
             "mobile" => $this->request->getPost("mobile"),
             "gender" => $this->request->getPost("gender"),
             "is_scholarship" => $this->request->getPost("is_scholarship")
@@ -68,6 +69,7 @@ class Estudiantes extends BaseController
             "dni" => $this->request->getPost("dni"),
             "university_code" => $this->request->getPost("university_code"),
             "email_institutional" => $this->request->getPost("email_institutional"),
+            "facultad" => $this->request->getPost("facultad"),
             "mobile" => $this->request->getPost("mobile"),
             "gender" => $this->request->getPost("gender"),
             "is_scholarship" => $this->request->getPost("is_scholarship")

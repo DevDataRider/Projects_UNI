@@ -38,7 +38,12 @@ class Tickets extends Controller
             return redirect()->back()->with('error', 'Ticket no encontrado.');
         }
 
-        $this->ticketModel->delete($id);
+        try {
+            $this->ticketModel->delete($id);
+        } catch (\CodeIgniter\Database\Exceptions\DatabaseException $e) {
+            // Restricción de llave foránea: el ticket ya tiene una asistencia registrada (fue confirmado/entregado).
+            return redirect()->back()->with('error', 'No se puede eliminar este ticket: ya tiene una asistencia registrada (fue confirmado/entregado).');
+        }
 
         return redirect()->back()->with('success', 'Ticket eliminado correctamente.');
     }

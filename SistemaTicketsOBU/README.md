@@ -1,14 +1,26 @@
 # 🧾 Sistema de Tickets Comedor OBU
 
-Sistema web desarrollado para la gestión de tickets del servicio de desayuno universitario, diseñado para optimizar la atención y reducir tiempos de espera.
+Sistema web desarrollado para la gestión de tickets del servicio de comedor universitario (desayuno, almuerzo y cena), diseñado para optimizar la atención y reducir tiempos de espera.
 
 ---
 
 ## 🎯 Descripción
 
-El proyecto **Comedor OBU** surge como una solución para evitar largas colas y la pérdida de tiempo en la distribución de desayunos dentro del entorno universitario.
+El proyecto **Comedor OBU** surge como una solución para evitar largas colas y la pérdida de tiempo en la distribución de las comidas dentro del entorno universitario.
 
 A través de este sistema, los usuarios pueden generar y gestionar tickets de manera digital, mejorando la organización y eficiencia del servicio.
+
+---
+
+## ⏰ Horarios de atención
+
+El comedor atiende de **lunes a viernes**, en tres turnos fijos (fuera de estos horarios o los fines de semana no se pueden generar tickets nuevos):
+
+| Turno | Horario |
+|---|---|
+| 🌅 Desayuno | 7:00 a. m. – 9:30 a. m. |
+| 🍽️ Almuerzo | 12:00 p. m. – 2:00 p. m. |
+| 🌙 Cena | 5:00 p. m. – 7:00 p. m. |
 
 ---
 
@@ -24,8 +36,10 @@ A través de este sistema, los usuarios pueden generar y gestionar tickets de ma
 
 ## ⚙️ Funcionalidades principales
 
-* Generación de tickets digitales
-* Gestión y control de atención
+* Generación de tickets digitales con código QR, uno por turno (desayuno, almuerzo, cena)
+* Verificación de tickets por el personal del comedor al escanear el QR
+* Gestión y control de atención (estudiantes, platos del día, incidencias, actividad estudiantil, asistencias)
+* Exportación de reportes en PDF y Excel (Estudiantes, Incidencias, Actividades, Asistencias)
 * Interfaz web interactiva
 * Manejo de sesiones de usuario
 * Registro de actividad mediante logs

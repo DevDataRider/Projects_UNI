@@ -40,7 +40,7 @@ class Filters extends BaseConfig
         'before' => [
             'csrf',
             'auth'      => ['except' => ['/', 'auth*']],
-            'adminOnly' => ['except' => ['/', 'auth*', 'perfil*', 'ticket/*', 'ticketestudiante*']],
+            'adminOnly' => ['except' => ['/', 'auth*', 'perfil*', 'ticket/*', 'ticketestudiante*', 'cajas*']],
             // 'honeypot',
             // 'invalidchars',
         ],
